@@ -1,0 +1,41 @@
+<view style="margin-top:40rpx;" class="cu-bar bg-white search">
+  <image style="background-color: white;" bindtap="addFriend" class="cu-avatar round" src = "../../images/tianjia-circle.png"></image>
+  <view class="content">
+    消息列表
+  </view>
+  <!-- <view class="action">
+    <text class="cuIcon-more"></text>
+  </view> -->
+</view>
+<view style="margin-top: 0;border-bottom: 3rpx solid #fff;" class="cu-list menu-avatar" wx:for="{{msgList}}"
+  bindtap="clickMsg" data-index="{{index}}">
+  <view class="cu-item">
+    <view class="cu-tag badge" style="margin-top: 30rpx; margin-right: 50rpx;">99</view>
+    <image class="cu-avatar round lg" src = "{{item.icon}}"></image>
+    <view class="content flex-sub">
+      <view class="text-grey">{{item.title}}</view>
+      <view class="text-gray text-sm flex justify-between">
+        {{item.content}}
+        <view class="text-gray text-sm">
+          <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.time}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <mp-tabbar
+    style="position:fixed;bottom:0;width:100%;left:0;right:0;"
+    list="{{list}}"
+    bindchange="tabChange"
+  ></mp-tabbar>
+</view>
+<view class="operation-pannel" wx:if="{{showOperationPannel}}">
+  <view
+    class="operation-pannel-item"
+    wx:for="{{operationList}}"
+    data-index="{{index}}"
+    bindtap="clickOperationItem"
+  >
+    <image class="operation-pannel-image" src="{{item.imageUrl}}"></image>
+    <text class="operation-pannel-text">{{item.text}}</text>
+  </view>
+</view>

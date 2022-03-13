@@ -1,0 +1,68 @@
+<scroll-view scroll-y class="scrollPage">
+    <view class="UCenter-bg">
+      <image src="{{userInfo.avatarUrl}}" class="avatarUrl"></image>
+      <view class="text-xl text-gray">辽大视窗
+        <text class="text-df text-gray">v1.0</text>
+      </view>
+      <view class="margin-top-sm">
+        <text class = "text-gray">By:Doerr</text>
+      </view>
+    </view>
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+      <view class="cu-item arrow">
+        <view class="content" bindtap="showQrcode0">
+          <text class="cuIcon-edit text-red"></text>
+          <text class="text-grey">我发布的</text>
+        </view>
+      </view>
+      <view class="cu-item arrow">
+        <view class="content" bindtap="showQrcode5">
+          <text class="cuIcon-friend text-black"></text>
+          <text class="text-grey">校园好友</text>
+        </view>
+      </view>
+      <view class="cu-item arrow">
+        <view class="content" bindtap="showQrcode1">
+          <text class="cuIcon-attention text-green"></text>
+          <text class="text-grey">每日树洞</text>
+        </view>
+      </view>
+      <view class="cu-item arrow">
+        <view class="content" bindtap="showQrcodeBB">
+          <text class="cuIcon-like text-pink"></text>
+          <text class="text-grey">辽大山楂岛表白墙</text>
+        </view>
+      </view>
+      <view class="cu-item arrow">
+        <view class="content" bindtap="showQrcode">
+          <text class="cuIcon-camera text-yellow"></text>
+          <text class="text-grey">辽大相册</text>
+        </view>
+      </view>
+      <view class="cu-item arrow">
+        <view class="content" bindtap="showQrcode2">
+          <text class="cuIcon-apps text-blue"></text>
+          <text class="text-grey">辽大小商城</text>
+        </view>
+      </view>
+      <view class="cu-item arrow">
+        <view class="content" bindtap="showQrcode3">
+          <text class="cuIcon-appreciatefill text-red"></text>
+          <text class="text-grey">赞赏支持</text>
+        </view>
+      </view>
+      <view class="cu-item arrow">
+        <view class="content" bindtap="showQrcode4">
+          <text class="cuIcon-weixin text-green"></text>
+          <text class="text-grey">联系作者</text>
+        </view>
+      </view>
+      <view class="cu-item arrow">
+        <button class="cu-btn content" open-type="feedback">
+          <text class="cuIcon-writefill text-cyan"></text>
+          <text class="text-grey">意见反馈</text>
+        </button>
+      </view>
+    </view>
+    <view class="cu-tabbar-height"></view>
+  </scroll-view>

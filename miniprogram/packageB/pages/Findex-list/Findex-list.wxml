@@ -1,0 +1,14 @@
+<view style="margin-top:40rpx;" class="cu-bar bg-white search">
+  
+  <view class="content">
+    好友列表
+  </view>
+  <view slot="right" bindtap="back" class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
+	
+  <!-- <view class="action">
+    <text class="cuIcon-more"></text>
+  </view> -->
+</view>
+<mp-indexList list="{{list}}" vibrated ="{{false}}" bindchoose="onChoose"></mp-indexList>
+<image bindtap="addFriend" class="tianJia cu-avatar round" src = "/images/tianjia-circle.png"></image>
+

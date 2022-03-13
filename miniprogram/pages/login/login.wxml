@@ -1,0 +1,51 @@
+<view wx:if="{{userInfo != null}}">
+    <image class="LNU" src="{{userInfo.avatarUrl}}"
+        style="height: 120rpx; width: 120rpx; margin: 40rpx auto 10rpx auto; border-radius: 50%;"></image>
+
+    <view>
+        <text class="title123">
+            {{userInfo.nickName}}
+        </text>
+        <text class="title123">
+            明德精学、笃行致强
+        </text>
+    </view>
+
+    <view class="padding flex flex-direction">
+        <button bindtap="bindGetUserInfo"
+            class="cu-btn bg-green margin-tb-sm lg">进入发布</button>
+    </view>
+
+    <view class="padding-xs flex align-center">
+        <view class="flex-sub text-center">
+            <view class="text-sm padding">
+                <text class="text-grey">Copyright © 2021 by doer | 辽宁大学 | 信息学院</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <image class="LNU" src="../../images/LUNU.jpg"
+        style="height: 120rpx; width: 120rpx; margin: 40rpx auto 10rpx auto; border-radius: 50%;"></image>
+
+    <view>
+        <text class="title123">
+            辽大视窗
+        </text>
+    </view>
+
+    <view class="padding flex flex-direction">
+        <button  bindtap="bindGetUserInfo"
+            class="cu-btn bg-green margin-tb-sm lg">请先登录</button>
+    </view>
+
+    
+    <view class="padding-xs flex align-center">
+        <view class="flex-sub text-center">
+            <view class="solid-bottom text-sm padding">
+                <text class="text-grey">Copyright © 2021 by doer | 辽宁大学 | 信息学院</text>
+            </view>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,25 @@
+.button_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 99;
+  
+}
+
+.button { 
+  z-index: 1000000;
+  position: fixed;
+  bottom: 30rpx;
+  width: 145rpx;
+  height: 145rpx;
+  margin: 10rpx;
+  background-color: rgba(192, 192, 192, 0.3);
+  border-radius: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: bold;
+  color:white;
+}

@@ -1,0 +1,641 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "跳转详情页",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "TabCur=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新闻活动上传",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "发布表白墙",
+          "pathName": "pages/publish-love/publish-love",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "发布外卖信息",
+          "pathName": "pages/publish-store/publish-store",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "家教上传",
+          "pathName": "pages/publish-teacher/publish-teacher",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "家教需求",
+          "pathName": "pages/publish-teacherX/publish-teacherX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "求房源",
+          "pathName": "pages/publish-houseX/publish-houseX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "发布房源",
+          "pathName": "pages/publish-house/publish-house",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 9,
+          "name": "驾校提交",
+          "pathName": "pages/publish-car/publish-car",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "sign-in",
+          "pathName": "pages/sign-in/sign-in",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pades/detail/friend",
+          "pathName": "pades/detail/friend",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/friend",
+          "pathName": "pages/detail/friend",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/jianjie/jianjie",
+          "pathName": "pages/jianjie/jianjie",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/map/map",
+          "pathName": "pages/map/map",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addmap/addmap",
+          "pathName": "pages/addmap/addmap",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/map1/map1",
+          "pathName": "pages/map1/map1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish/publish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/imagelist",
+          "pathName": "pages/detail/imagelist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/article/article",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/article/article",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/article/article",
+          "pathName": "pages/article/article",
+          "query": "id=b00064a760388ff2073be68d02adb6dd",
+          "scene": null
+        },
+        {
+          "name": "pages/article/article",
+          "pathName": "pages/article/article",
+          "query": "id=79550af26038d35107362e2b30516947",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "TabCur=3",
+          "scene": null
+        },
+        {
+          "name": "love",
+          "pathName": "pages/publish-love/publish-love",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "TabCur=3",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-store/publish-store",
+          "pathName": "pages/publish-store/publish-store",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/indextab/indextab",
+          "pathName": "pages/indextab/indextab",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "当家教",
+          "pathName": "pages/publish-teacher/publish-teacher",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-teacherX/publish-teacherX",
+          "pathName": "pages/publish-teacherX/publish-teacherX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-house/publish-house",
+          "pathName": "pages/publish-house/publish-house",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-houseX/publish-houseX",
+          "pathName": "pages/publish-houseX/publish-houseX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-car/publish-car",
+          "pathName": "pages/publish-car/publish-car",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine-camera/mine-camera",
+          "pathName": "pages/mine-camera/mine-camera",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-camera/publish-camera",
+          "pathName": "pages/publish-camera/publish-camera",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-tree/publish-tree",
+          "pathName": "pages/publish-tree/publish-tree",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine-tree/mine-tree",
+          "pathName": "pages/mine-tree/mine-tree",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine-tree/mine-tree",
+          "pathName": "pages/mine-tree/mine-tree",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-teacherX/publish-teacherX",
+          "pathName": "pages/publish-teacherX/publish-teacherX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-house/publish-house",
+          "pathName": "pages/publish-house/publish-house",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-car/publish-car",
+          "pathName": "pages/publish-car/publish-car",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish/publish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine-store/mine-store",
+          "pathName": "pages/mine-store/mine-store",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publishStore/publishStore",
+          "pathName": "pages/publishStore/publishStore",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addmap/addmap",
+          "pathName": "pages/addmap/addmap",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-total/publish-total",
+          "pathName": "pages/publish-total/publish-total",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mypublish/mypublish",
+          "pathName": "pages/mypublish/mypublish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-house/publish-house",
+          "pathName": "pages/publish-house/publish-house",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/map/map",
+          "pathName": "pages/map/map",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/jianjie/jianjie",
+          "pathName": "pages/jianjie/jianjie",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine-tree/mine-tree",
+          "pathName": "pages/mine-tree/mine-tree",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-total/publish-total",
+          "pathName": "pages/publish-total/publish-total",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/map/map",
+          "pathName": "pages/map/map",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mypublishNews/mypublishNews",
+          "pathName": "pages/mypublishNews/mypublishNews",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publishLove/publishLove",
+          "pathName": "pages/publishLove/publishLove",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publishLove/publishLove",
+          "pathName": "pages/mypublishLove/mypublishLove",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mypublishLove/mypublishLove",
+          "pathName": "pages/mypublishLove/mypublishLove",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mypublishTea/mypublishTea",
+          "pathName": "pages/mypublishTea/mypublishTea",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mypublishTeaX/mypublishTeX",
+          "pathName": "pages/mypublishTeaX/mypublishTeX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publishTiaoZao/publishTiaoZao",
+          "pathName": "pages/publishTiaoZao/publishTiaoZao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publishStore/publishStore",
+          "pathName": "pages/publishStore/publishStore",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-total/publish-total",
+          "pathName": "pages/publish-total/publish-total",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mypublish/mypublish",
+          "pathName": "pages/mypublish/mypublish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mypublishTiaoZao/mypublishTiaoZao",
+          "pathName": "pages/mypublishTiaoZao/mypublishTiaoZao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/public-gonggao/public-gonggao",
+          "pathName": "pages/public-gonggao/public-gonggao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/im/room/room",
+          "pathName": "pages/im/room/room",
+          "query": "TabCur=3",
+          "scene": null
+        },
+        {
+          "name": "pages/myMsg/myMsg",
+          "pathName": "pages/myMsg/myMsg",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/contentCheck/contentCheck",
+          "pathName": "pages/contentCheck/contentCheck",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-love/publish-love",
+          "pathName": "pages/publish-love/publish-love",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-teacherX/publish-teacherX",
+          "pathName": "pages/publish-teacherX/publish-teacherX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-tree/publish-tree",
+          "pathName": "pages/publish-tree/publish-tree",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publishTiaoZao/publishTiaoZao",
+          "pathName": "pages/publishTiaoZao/publishTiaoZao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publishStore/publishStore",
+          "pathName": "pages/publishStore/publishStore",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-camera/publish-camera",
+          "pathName": "pages/publish-camera/publish-camera",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine-store/mine-store",
+          "pathName": "pages/mine-store/mine-store",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "nickName=go for it&groupId=28ee4e3e607a96c80ff0e4e61507a589&userIdoGQUD5Fj9F5dbf8ethiXfztw28qg=undefined",
+          "pathName": "pages/entrance/entrance",
+          "query": "nickName=go for it&groupId=28ee4e3e607a96c80ff0e4e61507a589&userIdoGQUD5Fj9F5dbf8ethiXfztw28qg=undefined",
+          "scene": null
+        },
+        {
+          "name": "跳转私聊",
+          "pathName": "pages/changeTomine/changeTomine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/userInfo",
+          "pathName": "pages/user/userInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/workBox/workBox",
+          "pathName": "pages/workBox/workBox",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/music/music",
+          "pathName": "pages/music/music",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/musicL/musicL",
+          "pathName": "pages/musicL/musicL",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-total/publish-total",
+          "pathName": "pages/publish-total/publish-total",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/Findex-list/Findex-list",
+          "pathName": "packageB/pages/Findex-list/Findex-list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/search/search",
+          "pathName": "packageB/pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/qunLiao/qiaoLiao",
+          "pathName": "packageB/pages/qunLiao/qiaoLiao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/chatgroup/info",
+          "pathName": "packageB/pages/chatgroup/info",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/Findex-list/Findex-list",
+          "pathName": "packageB/pages/Findex-list/Findex-list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/chatgroup/editName",
+          "pathName": "packageB/pages/chatgroup/editName",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/im/room/room",
+          "pathName": "pages/im/room/room",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/Findex-list/Findex-list",
+          "pathName": "packageB/pages/Findex-list/Findex-list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/publish-store/publish-store",
+          "pathName": "packageB/pages/publish-store/publish-store",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish-total/publish-total",
+          "pathName": "pages/publish-total/publish-total",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/publish-house/publish-house",
+          "pathName": "packageB/pages/publish-house/publish-house",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/publish-houseX/publish-houseX",
+          "pathName": "packageB/pages/publish-houseX/publish-houseX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageA/pages/mine-tree/mine-tree",
+          "pathName": "packageA/pages/mine-tree/mine-tree",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageB/pages/SZlove/SZlove",
+          "pathName": "packageB/pages/SZlove/SZlove",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/hawthorn/hawthorn",
+          "pathName": "pages/hawthorn/hawthorn",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

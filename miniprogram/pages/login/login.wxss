@@ -1,0 +1,27 @@
+/* pages/login/login.wxss */
+page{
+  background: white;
+}
+.LNU{
+  width: 100px;
+  height: 100px;
+  display:flex;
+  justify-content: center;
+}
+.title123{
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.textshengming{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.text-shengming{
+  position: fixed;
+  bottom: 30rpx;
+}

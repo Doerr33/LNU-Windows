@@ -1,0 +1,64 @@
+<view class="bg-white padding-lr" wx:for = "{{newsList}}" wx:key = "index">
+    <view class="padding-xs flex align-center">
+        <view class="flex-sub text-center">
+            <view class="solid-bottom text-xl padding">
+                <text class="text-black text-bold">{{item.title}}</text>
+            </view>
+            <view class="padding">
+                <text>作者：{{item.actor}}</text>
+                <text class="margin-left">时间：{{item.time}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 图片 -->
+    <view class="cu-card">
+        <view class="image">
+            <image data-src="{{item.imageUrl}}" bindtap = "viewImage" src="{{item.imageUrl}}" mode="widthFix" style="height: 100%;width: 100%;"></image>
+        </view>
+    </view>
+    <!-- 内容 -->
+    <view class="content">
+        <text>{{item.content}}</text>
+    </view>
+    <view class="lovelike">
+        <view class="text-gray text-sm text-icon">
+            <text class="cuIcon-attentionfill"></text> {{item.browse == null ? 0 : item.browse}}
+        </view>
+        <view class="text-gray text-sm text-icon" bindtap = "isLike">
+            <text class="cuIcon-appreciatefill redlove == true?'redLove':''"></text> {{item.like.length}}
+        </view>
+        <view class="text-gray text-sm text-icon" bindtap = "isComment">
+            <text class="cuIcon-messagefill"></text> {{item.comment.length == null ? 0 : item.comment.length}}
+        </view>
+    </view>
+
+    <view wx:if = "{{showComment}}">
+        <!-- 评论框 -->
+    <view class="cu-form-group margin-top solid{{size?'s':''}}">
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="{{reply.length>0 ? '回复 ' + reply : '评论'}}"></textarea>
+    </view>
+    <view class="padding flex flex-direction">
+        <button bindtap = "clickSend" disabled = "{{!commnetLength}}" class="cu-btn bg-green margin-tb-sm lg">发表</button>
+    </view>
+    </view>
+    
+    <view catchtap="clickCommentItem" bindlongpress = "delcomment" 
+    wx:for-index="commentIndex" data-index="{{index}}"
+    data-commentindex="{{commentIndex}}"
+    wx:for-item="comment" wx:for-index="commentIndex" class="cu-list menu-avatar solids-left" wx:for = "{{item.comment}}">
+        <view class="cu-item">
+          <view class="cu-avatar round" style="background-image:url({{comment.userInfo.avatarUrl}});"></view>
+          <view class="content">
+            <text class="comment-nickname">{{comment.nickName}}</text>
+            <block wx:if="{{comment.reply}}">
+                <text class="comment-conetnt">回复 </text>
+                <text class="comment-nickname">{{comment.reply}}:</text>
+            </block>
+            <text class="text-black">{{comment.content}}</text>
+            <view class="margin-top-sm flex justify-between">
+              <view class="text-blue text-df timecomment">{{comment.time}}</view>
+            </view>
+          </view>
+        </view>
+    </view>    
+</view>

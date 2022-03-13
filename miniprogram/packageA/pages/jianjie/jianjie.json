@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "swiper":"../../../components/swiper/swiper"
+  },
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom"
+}

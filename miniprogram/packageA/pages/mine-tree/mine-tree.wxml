@@ -1,0 +1,14 @@
+<view class="backTree" wx:for = "{{TreeList}}">
+  <view class="TreeMeiri">每日树洞:
+    <view class="contentTree">
+      <text>
+        {{item.content}}
+      </text>
+    </view>
+  </view>
+</view>
+<view class="button_container">
+  <view class="button" bindtap="addLocation">
+    <text>送入树洞</text>
+  </view>
+</view>

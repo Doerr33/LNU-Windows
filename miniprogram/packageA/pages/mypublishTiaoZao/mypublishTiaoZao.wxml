@@ -1,0 +1,33 @@
+<block>
+  <view data-index="{{index}}" bindlongpress = "delTiaoZao" class="item" wx:for="{{TiaoZaoList}}" bindtouchstart="bindTouchStart">
+    <view class="left">
+      <image class="avatar" src="{{item.userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="right">
+      <view class="nickname">{{item.userInfo.nickName}}</view>
+      <view class="content">{{item.content}}</view>
+      <view class="image-list">
+        <block wx:if="{{item.images.length != 1}}">
+          <image mode="aspectFit" bindtap="viewImagesTiaoZao" data-index="{{index}}" data-src="{{image}}" class="image"
+            wx:for="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+        </block>
+        <block wx:else>
+          <image mode="aspectFit" bindtap="viewImagesTiaoZao" data-index="{{index}}" data-src="{{image}}" class="imagenum1"
+            wx:for="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+        </block>
+      </view>
+      <view class="time-area">
+        <view class="time">{{item.time}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="comment-add" style="bottom:{{heightBottom !='' ? heightBottom : 0}}rpx;" wx:if="{{showCommentAdd}}">
+
+    <input class="comment-input" placeholder="{{reply.length>0 ? '回复 ' + reply : '评论'}}" focus="{{showCommentAdd}}" bindinput="bindInput" bindfocus="bindFocus" />
+  
+    <button class="comment-send " type="primary" disabled="{{commentContent.length>0 ? false : true}}" size="mini" catchtap="clickSend">发 送</button>
+  </view> -->
+
+
+</block>

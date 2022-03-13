@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="button_container">
+    <view class="button" bindtap = "toJianjie">
+      <text>辽大简介</text>
+    </view>
+  </view>
+  <view class="button_container">
+    <navigator class="button" url="/packageA/pages/map/map">
+      <text>辽大导览</text>
+    </navigator>
+  </view>
+  <view class="button_container">
+    <view class="button" bindtap = "indexURL">
+      <text>进入视窗</text>
+    </view>
+  </view>
+  <!-- <view class="copyright">
+    <navigator target="miniProgram" app-id="wx8afedfde046e5916">
+      <text>© 信息学院Doer</text>
+    </navigator>
+    <navigator url="web-views/web-views?url={{mapCopyright.url}}">
+      <text>{{mapCopyright?"数据版权："+mapCopyright.name:""}}</text>
+    </navigator>
+  </view> -->
+</view>

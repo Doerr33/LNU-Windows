@@ -1,0 +1,35 @@
+<view class="cu-form-group margin-top">
+  <view class="title">输入店名:</view>
+  <input placeholder="例：XXXX" name="title" bindinput = "textareaAInput"></input>
+</view>
+<!-- 输入标题 -->
+<view class="cu-form-group margin-top">
+  <view class="title">小程序APPID:</view>
+  <input placeholder="新闻，活动标题" name="title" bindinput = "textareaBInput"></input>
+</view>
+<!-- 输入标题 -->
+<view class="cu-form-group margin-top">
+  <view class="title">如何开店: <text class="text-green">微信搜索"小商店助手"</text> </view>
+</view>
+<view wx:for-index="idx" class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image bindtap = "viewImages2" data-index="{{idx}}" data-src="{{image}}" wx:for-item="image" src="cloud://cloud1-7gdhiyd69c198606.636c-cloud1-7gdhiyd69c198606-1305299693/辽宁大学/教程2.jpg" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+<view class="cu-form-group margin-top">
+  <view class="title">如何获取APPID: 
+    <text class="text-green">https://mp.weixin.qq.com/</text>
+    <text data-index = "{{idx}}" bindtap = "CopyWeChatX" class="textCopy">复制</text>
+  </view>
+</view>
+<view wx:for-index="idx" class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image bindtap = "viewImages" data-index="{{idx}}" data-src="{{image}}" wx:for-item="image" src="cloud://cloud1-7gdhiyd69c198606.636c-cloud1-7gdhiyd69c198606-1305299693/辽宁大学/教程.jpg" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+<button type="primary" formType="submit" style="margin:25rpx;" bindtap = "publishNews">发布</button>
+<button type="primary" formType="reset" style="margin:25rpx;">重置</button>

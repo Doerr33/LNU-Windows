@@ -1,0 +1,504 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+/* page {
+    padding-top: 100rpx;
+  }
+   */
+  .indexes {
+    position: relative;
+  }
+  
+  .indexBar {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    padding: 20rpx 20rpx 20rpx 60rpx;
+    display: flex;
+    align-items: center;
+  }
+  
+  .indexBar .indexBar-box {
+    width: 40rpx;
+    height: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.1);
+    border-radius: 10rpx;
+  }
+  
+  .indexBar-item {
+    flex: 1;
+    width: 40rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24rpx;
+    color: #888;
+  }
+  
+  movable-view.indexBar-item {
+    width: 40rpx;
+    height: 40rpx;
+    z-index: 9;
+    position: relative;
+  }
+  
+  movable-view.indexBar-item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 10rpx;
+    height: 20rpx;
+    width: 4rpx;
+    background-color: #f37b1d;
+  }
+  
+  .indexToast {
+    position: fixed;
+    top: 0;
+    right: 80rpx;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+    margin: auto;
+    color: #fff;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 48rpx;
+  }
+  .userAvatarUrl{
+      border-radius: 50%;
+  }
+  .item_take_out{
+      font-size: 15px;
+      padding-left: 18px;
+      margin-bottom: 8px;
+  }
+  .itemImage{
+      margin-top: 8px;
+  }
+  .store{
+      font-weight: bold;
+  }
+  /* 返回顶部 */
+.goTop{
+  height: 100rpx;
+  width: 100rpx;
+  position: fixed;
+  bottom: 50rpx;
+  background: rgba(0,0,0,.3);
+  right: 30rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+}
+.fixation{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+.head_content {
+  height: 300px;
+  background-color: orange;
+}
+.list_item {
+  height: 100px;
+  border-bottom: 1px solid #eee;
+}
+.tabBar {
+  height: 50px;
+  background-color: #fff;
+  border-bottom: 1px solid #00a4ff;
+}
+.fixed {
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+.stickyClass{
+  position: sticky;
+  top: 0;
+  z-index: 999;/*这个设置在原生组件中用于置顶导航条*/
+}
+
+
+
+
+
+/**index.wxss**/
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+  /* 设置tab-nav宽高度 */
+  height: 80rpx;
+  width: 100%;
+
+  /* 假如您需要并排放置两个带边框的框，
+  可通过将 box-sizing 设置为 "border-box"。 */
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  /* 居中 */
+  line-height: 80rpx;
+
+  background:
+    #f7f7f7;
+
+  font-size: 16px;
+
+  /* 规定段落中的文本不进行换行： */
+  white-space: nowrap;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.nav-item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+
+.nav-item.active {
+  color:
+    green;
+}
+
+.tab-box {
+  background:
+    rgb(223, 224, 224);
+    /* 这里设置成nav的高度 */
+  padding-top: 80rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tab-content {
+  /* 裁剪 div 元素中内容的左/右边缘 - 如果溢出元素的内容区域的话： */
+  overflow-y: scroll;
+}
+
+/* 页面设置白色 */
+
+
+/* 整个页面的宽度时750rpx
+  设置左右边距20rpx
+  头像设置80rpx
+  头像据右侧10rpx
+  右侧剩余：750-80-20-20-10 = 620
+*/
+.item{
+  background-color: white;
+  display: flex;
+  width: 100%;
+  padding: 20rpx 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+/* 左侧，宽80，距离右侧10rpx：即头像的位置 */
+.left{
+  width: 80rpx;
+  margin-right: 10rpx;
+}
+.avatar{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 10rpx;
+  background: #f3f3f3;
+  border-radius: 50%;
+}
+
+.right{
+  /* 右侧剩余 */
+  width: 620rpx;
+  /* flex布局 */
+  display: flex;
+  /* 按列排 */
+  flex-direction: column;
+}
+.nickname{
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  font-size: 32rpx;
+  line-height: 50rpx;
+  color: #3b4977;
+}
+
+.content{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: #181818;
+  margin-bottom: 20rpx;
+}
+
+.image-list{
+  display: flex;
+  /* 可以换行 */
+  flex-wrap: wrap;
+}
+.image-list .image{
+  width: 190rpx;
+  height: 190rpx;
+  /* 设置背景颜色，未加载时占位 */
+  background: #f3f3f3;
+  /* 图片排列空隙 */
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.time-area{
+  display: flex;
+  height: 72rpx;
+  /* 相对定位 */
+  position: relative;
+  align-items: center;
+}
+.time-area .time{
+  font-size: 26rpx;
+  /* 和父元素相同 */
+  line-height: 70rpx;
+  color: #696969;
+}
+.time-area .operation-button{
+  height: 40rpx;
+  width: 70rpx;
+  /* 绝对定位，相对定位里又设置，要生效就要先设置relative */
+  /* 在父元素中的绝对位置 */
+  position: absolute;
+  /* 时间区域最右侧 */
+  right: 0rpx;
+  /* (70-40)  / 2 */
+  top: 15rpx;
+}
+.time-area .operation-pannel{
+  position: absolute;
+  /* 行高跟父控件一样了 */
+  top: 0rpx;
+  /* 离操作按钮还有10rpx */
+  right: 80rpx;
+  width: 300rpx;
+  line-height: 70rpx;
+  background-color: #4c5154;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: white;
+  /* 文字居中 */
+  text-align: center;
+}
+.time-area .operation-pannel .tab{
+  /* 不换行 */
+  display: inline-block;
+  /* 平分300 */
+  width: 150rpx;
+}
+.time-area .operation-pannel .tab .image{
+  width: 26rpx;
+  height: 26rpx;
+  /* 图片居中 */
+  vertical-align: middle;
+  /* 透明的 */
+  background-color: transparent;
+}
+.love-comment{
+  margin-top: 10rpx;
+  background-color: #f7f7f7;
+  width: 100%;
+}
+
+.love{
+  padding: 6rpx 16rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.love .love-icon{
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.love .love-nickname{
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #3b4977;
+}
+.comment{
+  padding: 6rpx 16rpx;
+  padding-bottom: 12rpx;
+  font-size: 30rpx;
+}
+.comment .comment-nickname{
+  color: #3b4977;
+}
+.comment .comment-content{
+  color: #181818;
+  line-height: 40rpx;
+}
+/* 评论输入框 */
+.comment-add{
+  
+  background-color: white;
+  /* 固定定位 */
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  /* 居中 */
+  align-items: center;
+  border-top: 1px solid #f3f3f3;
+}
+.comment-add .comment-input{
+  height: 52rpx;
+  line-height: 52rpx;
+  /* 内容居中 */
+  vertical-align: middle;
+  color: #181818;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding: 5rpx 20rpx;
+  background-color: #f3f3f3;
+  /* 当按钮占剩余空间 */
+  flex-grow: 1;
+}
+.comment-add .comment-send{
+  margin-right: 20rpx;
+  font-size: 22rpx;
+}
+.imagenum1{
+  width: 400rpx;
+  height: 400rpx;
+}
+.inputComment{
+  z-index: 99999;
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  /* 居中 */
+  align-items: center;
+  border-top: 1px solid #f3f3f3;
+}
+/* ------------外卖通讯录---------------- */
+.tabscroll {
+  position: fixed;
+  right: 0rpx;
+  top: 300rpx;
+  z-index: 999;
+}
+
+.view-tab {
+  background: rgba(255, 255, 255, 0.6);
+  width: 90rpx;
+  height: 70rpx;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 99;
+  
+}
+
+.button { 
+  z-index: 1000000;
+  position: fixed;
+  bottom: 30rpx;
+  width: 145rpx;
+  height: 145rpx;
+  margin: 10rpx;
+  background-color: rgba(60, 179, 113, 0.4);
+  border-radius: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: bold;
+  color:white;
+}
+.textSelected{
+  background-color:rgba(60, 179, 113, 0.4);
+}
+.school{
+  z-index: 999;
+  width: 60rpx;
+  height: 60rpx;
+  position: fixed;
+  right: 10rpx;
+  top: 850rpx;
+}
+.schooltext{
+  z-index: 999;
+  position: fixed;
+  right: 10rpx;
+  top: 910rpx;
+  margin-right: 10rpx;
+  font-size: 20rpx;
+}
+.image-school{
+  z-index: 99999;
+}
+.eatItem{
+  margin-top: 60rpx;
+  /* margin-left: 30rpx; */
+}
+.store-juzhong{
+  font-weight:bolder;
+  font-size: 40rpx;
+  color: #C71585;
+  display: flex; /*设置显示样式**/
+  align-items: center; /**子view垂直居中*/
+  vertical-align: center; /**垂直居中*/
+  justify-content: center; /**内容居中*/
+  flex-direction: row;
+}
+.infomations{
+  height: 30rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  justify-content:flex-end;
+  font-weight: 550;
+}
+.textCopy{
+  margin-left: 20rpx;
+  border: 1px solid #3CB371;
+  color: #3CB371;
+  border-radius: 10rpx;
+  display: inline;
+  justify-content: space-between;
+  line-height: 30rpx;
+  font-size: 25rpx;
+  vertical-align: center; /**垂直居中*/
+  flex-direction:row;
+}
+/* 当家教详情 */
+.detail-font{
+  font-size: 25rpx;
+  text-indent:2rem
+}
+.delete{
+  /* position: fixed; */
+  /* right: 0rpx; */
+  border-radius: 10rpx;
+  margin-right: 700rpx;
+}

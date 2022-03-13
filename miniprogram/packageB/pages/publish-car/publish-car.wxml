@@ -1,0 +1,64 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+	<!-- 输入介绍 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">输入驾校名称：</view>
+		<input placeholder="例：XX-驾校" name="content" bindinput="textareaInput"></input>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">输入介绍：</view>
+		<input placeholder="例：XX-驾校，教练优秀·····" name="content" bindinput="textareaAInput"></input>
+	</view>
+	<!-- 输入地点 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">输入地点：</view>
+		<input placeholder="例：详细地址" name="addr" bindinput="textareaBInput"></input>
+	</view>
+	<!-- 输入价格 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">输入价格：/包含所有费用</view>
+		<input placeholder="例：2998" name="price" bindinput="textareaCInput"></input>
+	</view>
+	<!-- 输入是否为中介 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">是否接送（包括1个人）：</view>
+		<input placeholder="注：填是或否" name="jiesong" bindinput="textareaDInput"></input>
+	</view>
+	<!-- 输入中介费 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">下证时间：</view>
+		<input placeholder="注：2个月" name="TakeTime" bindinput="textareaEInput"></input>
+	</view>
+	<!-- 联系方式 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">输入电话</view>
+		<input placeholder="例：电话号码" name="phone" bindinput="textareaFInput"></input>
+	</view>
+	<!-- 上传图片头0/1 -->
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			上传视频
+		</view>
+	</view>
+	<!-- 视频 -->
+	<view class="video_area" wx:if="{{video != ''}}">
+		<video class="video_item" src="{{video}}" controls></video>
+		<image class="video_delete" src="../../images/delete.png" mode="aspectFill" bindtap="videoDelete" />
+	</view>
+	<!-- 预览视频，视频上传图片 -->
+	<view class="cu-form-group">
+		
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="chooseVideo" wx:if="{{video == '' &&  images.length == 0}}">
+				<text class="cuIcon-cameraadd" name="image"></text>
+			</view>
+		</view>
+	</view>
+	<button type="primary" formType="submit" style="margin:25rpx;" bindtap="publishNews">提交审核</button>
+	<button type="primary" formType="reset" style="margin:25rpx;">重置</button>
+</form>

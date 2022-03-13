@@ -1,0 +1,70 @@
+/* 页面设置白色 */
+page{
+  background-color: #fff;
+}
+
+/* 整个页面的宽度时750rpx
+  设置左右边距20rpx
+  头像设置80rpx
+  头像据右侧10rpx
+  右侧剩余：750-80-20-20-10 = 620
+*/
+.item{
+  display: flex;
+  width: 100%;
+  padding: 20rpx 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+/* 左侧，宽80，距离右侧10rpx：即头像的位置 */
+.left{
+  width: 130rpx;
+  margin-right: 40rpx;
+}
+.avatar{
+  width: 130rpx;
+  height: 130rpx;
+  margin-right: 10rpx;
+  background: #f3f3f3;
+  border-radius: 50%;
+}
+.location{
+  height: 100rpx;
+  width: 120rpx;
+}
+.right{
+  /* 右侧剩余 */
+  width: 620rpx;
+  /* flex布局 */
+  display: flex;
+  /* 按列排 */
+  flex-direction: column;
+}
+.nickname{
+  font-size: 55rpx;
+  line-height: 130rpx;
+  color: #3b4977;
+}
+.item1{
+  width: 100%;
+  padding: 20rpx 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+item1-text{
+  height: 30rpx;
+}
+.mini-localtion{
+  /* display: inline-block; */
+  width: 30rpx;
+  height: 30rpx;
+}
+.text-location{
+  font-size: 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+.adr{
+  margin: 20rpx;
+  width: 100%;
+  height: 400rpx;
+}

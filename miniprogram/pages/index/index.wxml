@@ -1,0 +1,547 @@
+<!-- <search></search> -->
+<scroll-view scroll-x class="bg-white nav stickyClass" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <!-- 
+        scroll-with-animation:在设置滚动条位置时使用动画过渡
+        scroll-left:设置横向滚动条位置
+        {{index==TabCur?'text-green cur':''}}:选中为绿色
+        data-id:
+  -->
+  <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{tabContent}}" wx:key="index" bindtap="tabSelect"
+    data-id="{{index}}">
+    {{item}}
+  </view>
+</scroll-view>
+<swiper class="tab-box" current="{{TabCur}}" bindchange="switchTab">
+  <swiper-item wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+    <!-- 校园新闻 -->
+    <block>
+      <navigator class="cu-card case {{isCard?'no-card':''}}" url="/pages/article/article?id={{item._id}}"
+        wx:for="{{newsList}}" wx:key="index">
+        <view class="cu-item shadow">
+          <view class="image">
+            <image src="{{item.imageUrl}}" mode="widthFix"></image>
+            <view class="cu-tag bg-blue">{{item.tag == 0?"新闻":"活动"}}</view>
+            <view class="cu-bar bg-shadeBottom">
+              <text class="text-cut" style="font-size: 20px;">{{item.title}}</text>
+            </view>
+          </view>
+          <view class="cu-list menu-avatar">
+            <view class="cu-item">
+              <!-- 头像 -->
+              <view class="cu-avatar round lg">
+                <image src="{{item.userInfo.avatarUrl}}"
+                  style="border-radius: 50%; height: 100%;width: 100%; overflow:hidden;">
+                </image>
+              </view>
+              <view class="content flex-sub">
+                <!-- 昵称 -->
+                <view class="text-grey">
+                  <text>
+                    {{item.userInfo.nickName}}
+                  </text>
+                </view>
+                <view class="text-gray text-sm flex justify-between">
+                  {{item.time}}
+                  <view class="text-gray text-sm">
+                    <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.browse == null ? 0 : item.browse}}
+                    <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.like.length}}
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </swiper-item>
+  <swiper-item wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+
+    <!-- 表白墙 -->
+    <block>
+      <view wx:for-index="idx" class="item" wx:for="{{loveList}}" bindtouchstart="bindTouchStart">
+        <view class="left">
+          <image class="avatar" data-index="{{idx}}" bindtap="toSiLiao" src="{{item.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="right">
+          <view class="nickname">{{item.userInfo.nickName}}</view>
+          <view class="content">{{item.content}}</view>
+          <view class="image-list">
+
+            <block wx:if="{{item.images.length != 1}}">
+              <image mode="aspectFit" bindtap="viewImages" data-index="{{idx}}" data-src="{{image}}" class="image"
+                wx:for="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+            </block>
+            
+            <block wx:else>
+              <image mode="aspectFit" bindtap="viewImages" data-index="{{idx}}" data-src="{{image}}" class="imagenum1"
+                wx:for="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+            </block>
+          </view>
+          <view class="time-area">
+            <view class="time">{{item.time}}</view>
+            <view>
+              <image class="operation-button" src="../../images/caozuo.png" catchtap="showOperationPannel"
+                data-index="{{idx}}" bindtouchstart="bindTouchStartOperation" bindtouchend="bindTouchEndOperation">
+              </image>
+              <!-- 判断当前索引和面盘索引是否一致 -->
+              <view class="operation-pannel" wx:if="{{showOperationPannelIndex == idx}}"
+                bindtouchstart="bindTouchStartOperationPannel" bindtouchend="bindTouchEndOperationPannel">
+                <view class="tab" catchtap="clickLove" data-index="{{idx}}">
+                  <image class="image" src="../../images/love-white.png"></image>
+                  <text wx:if="{{item.isLove}}"> 取消</text>
+                  <text wx:else> 赞</text>
+                </view>
+                <view class="tab" catchtap="clickComment" data-index="{{idx}}">
+                  <image class="image" src="../../images/comment-white.png"></image>
+                  <text>评论</text>
+                </view>
+              </view>
+            </view>
+
+          </view>
+          <view class="love-comment">
+            <view class="love" wx:if="{{item.loveList.length > 0}}">
+              <image class="love-icon" src="../../images/love-blue.png"></image>
+              <!-- love和整个循环的item不冲突 -->
+              <text class="love-nickname" wx:for-items="{{item.loveList}}" wx:for-item="love">{{love.nickName}},</text>
+            </view>
+            <view class="comment" wx:if="{{item.commentList.length > 0}}">
+              <view wx:for-items="{{item.commentList}}" wx:for-item="comment" wx:for-index="commentIndex"
+                data-index="{{idx}}" data-commentindex="{{commentIndex}}" catchtap="clickCommentItem">
+                <block wx:if="{{comment.reply}}">
+                  <text class="comment-nickname">{{comment.nickName}}</text>
+                  <text class="comment-conetnt">回复 </text>
+                  <text class="comment-nickname">{{comment.reply}}:</text>
+                  <text class="comment-content">{{comment.content}}</text>
+                </block>
+                <block wx:else>
+                  <text class="comment-nickname">{{comment.nickName}}:</text>
+                  <text class="comment-content">{{comment.content}}</text>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- <view class="comment-add" style="bottom:{{heightBottom !='' ? heightBottom : 0}}rpx;" wx:if="{{showCommentAdd}}">
+
+        <input class="comment-input" placeholder="{{reply.length>0 ? '回复 ' + reply : '评论'}}" focus="{{showCommentAdd}}" bindinput="bindInput" bindfocus="bindFocus" />
+      
+        <button class="comment-send " type="primary" disabled="{{commentContent.length>0 ? false : true}}" size="mini" catchtap="clickSend">发 送</button>
+      </view> -->
+
+
+    </block>
+  </swiper-item>
+  <swiper-item wx:for-item="tabItem" wx:key="idx" class="tab-content">
+    <!-- 外卖通讯录 -->
+    <block>
+      <view bindtap = "navToMiNi" data-index="{{index}}"  class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{storeList}}" wx:key="index">
+        <view class="cu-item shadow">
+          <view class="item_take_out eatItem">
+            <image class="squareImage" src="{{item.userInfo.avatarUrl}}"></image>
+              <text class="squareImage1">店铺:{{item.Store}}</text>
+              <text class="squareImage2">营业时间:{{item.DayTime}}</text>
+              <text class="text-green squareImage3">点击卡片即可直接跳转订餐</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+
+    <!-- 家教 -->
+    <block>
+      <view bindtap = "navToMiNi2" data-index="{{index}}" class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{teacherList}}"
+        wx:key="index">
+        <view class="cu-item shadow">
+          <view wx:if="{{item.GuanFang != ''}}" class="cu-tag bg-green gonggao">{{item.GuanFang}}</view>
+          <view class="cu-list menu-avatar" style="width: 100%; height: 300rpx;">
+            <view class="cu-item">
+              <!-- 头像 -->
+              <view class="cu-avatar round lg">
+                <image data-index="{{index}}" bindtap="toSiLiao1" src="{{item.userInfo.avatarUrl}}"
+                  style="border-radius: 50%; height: 100%;width: 100%; overflow:hidden;">
+                </image>
+              </view>
+              
+              <!-- <image class="squareImage" src="{{item.userInfo.avatarUrl}}"></image> -->
+              
+            </view>
+            <view class="content flex-sub" style="margin-left: 40rpx;">
+              <text class="squareImage1">店铺:{{item.Store}}</text>
+              <text class="squareImage2">营业时间:{{item.DayTime}}</text>
+              <text class="text-green squareImage3">点击卡片即可直接跳转订餐</text>
+            </view>
+          </view>
+         
+        </view>
+        
+      </view>
+      <view class='goTop' hidden='{{!floorstatus}}' bindtap="goTop">
+        顶部
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+
+    <!-- 家教需求 -->
+    <block>
+      <view wx:for-index="idx" class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{teacherXList}}" wx:key="index">
+        <view class="cu-item shadow">
+          <!-- <view wx:if="{{item.GuanFang != ''}}" class="cu-tag bg-green gonggao">{{item.GuanFang}}</view> -->
+          <view class="cu-list menu-avatar">
+            <view class="cu-item">
+              <!-- 头像 -->
+              <view class="cu-avatar round lg">
+                <image data-index="{{idx}}" bindtap="toSiLiao2" src="{{item.userInfo.avatarUrl}}"
+                  style="border-radius: 50%; height: 100%;width: 100%; overflow:hidden;">
+                </image>
+              </view>
+              <view class="content flex-sub">
+                <!-- 昵称 -->
+                <view class="text-grey">
+                  <text>
+                    {{item.userInfo.nickName}}
+                  </text>
+                </view>
+                <view class="text-gray text-sm flex justify-between">
+                  {{item.time}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="cu-list menu-avatar">
+            <view class="cu-item" style="width: 100%; height: 300px;">
+              <view class="content">
+                <view class="text-green">
+                  <text class="text-green" style="font-weight: bolder; font-size: 50rpx; margin-bottom: 15rpx;">房屋出租</text>
+                </view>
+                <view class="text-green">
+                  地址:<text class="text-gray">{{item.addr}}</text>
+                </view>
+                <view class="text-green justify-between">
+                  户型:<text class="text-gray">{{item.house}}</text>
+                </view>
+                <view class="text-green justify-between">
+                  要求:<text class="text-gray">{{item.Yaoqiu}}</text>
+                </view>
+                <view class="text-green justify-between" wx:if = "{{zhongjie == '是'}}">
+                  中介费:<text class="text-gray">{{item.phone}}</text>
+                </view>
+                <view class="text-green justify-between">
+                  电话：<text class="text-gray">{{item.phone}}</text>
+                  <text data-index="{{idx}}" bindtap="CopyPhoneX" class="textCopy">呼叫</text>
+                </view>
+                <view class="text-green justify-between">
+                  微信：<text class="text-gray">{{item.WeChat}}</text>
+                  <text data-index="{{idx}}" bindtap="CopyWeChatX" class="textCopy">复制</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class='goTop' hidden='{{!floorstatus}}' bindtap="goTop">
+        顶部
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+    <view class='notice1'>
+      <view class="left1">
+        <text class='iconfont icon-labagonggao voice1'></text>
+        <view class="left-box1">
+          <view class="left-text1"></view>
+          <view class='content-box1'>
+            <view class='content-text1' animation="{{animationData}}"><text id="text1">{{text}}</text></view>
+          </view>
+          <view class="right-text1"></view>
+        </view>
+      </view>
+    </view>
+    <!-- 出租 -->
+    <block>
+      <view wx:for-index="idx" class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{house}}" wx:key="index">
+        <view wx:if="{{item.shenHe}}" class="cu-item shadow">
+          <view wx:if="{{item.GuanFang != ''}}" class="cu-tag bg-green gonggao">{{item.GuanFang}}</view>
+          <view class="cu-list menu-avatar">
+            <view class="cu-item">
+              <!-- 头像 -->
+              <view class="cu-avatar round lg">
+                <image data-index="{{idx}}" bindtap="toSiLiao3" src="{{item.userInfo.avatarUrl}}"
+                  style="border-radius: 50%; height: 100%;width: 100%; overflow:hidden;">
+                </image>
+              </view>
+              <view class="content flex-sub">
+                <!-- 昵称 -->
+                <view class="text-grey">
+                  <text>
+                    {{item.userInfo.nickName}}
+                  </text>
+                </view>
+                <view class="text-gray text-sm flex justify-between">
+                  {{item.time}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+            <view class="bg-img {{isCard?'':'only-img'}}">
+              <video src="{{item.VideoID}}" mode="widthFix" style="height: 100%;width: 100%;"></video>
+            </view>
+          </view>
+          <!-- 评论区 -->
+          <view class="cu-list menu-avatar comment">
+            <view class="cu-item">
+              <view class="content">
+                <view class="text-green" style="font-weight: bolder; font-size: 40rpx;">机构:{{item.Name}}</view>
+                <view class="text-gray">简介:{{item.Jianjie}}</view>
+                <!-- <view wx:if="{{item.zhongjieF != ''}}" class="text-gray">中介费：{{item.zhongjieF}}</view> -->
+                <view class="text-gray">通过微信小商店下单模式报名</view>
+                <view class="text-gray">报名方式:
+                  <text data-index="{{idx}}" bindtap="navToMiNi3" class="textCopy">报名咨询</text>
+                </view>
+                <view class="text-gray">
+                  <text style="font-size: 50rxp;">地点：{{item.addr}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='goTop' hidden='{{!floorstatus}}' bindtap="goTop">
+        顶部
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+
+    <!-- 求租 -->
+    <block>
+      <view wx:for-index="idx" class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{houseX}}" wx:key="index">
+        <view class="cu-item shadow">
+          <view class="cu-list menu-avatar">
+            <view class="cu-item">
+              <!-- 头像 -->
+              <view class="cu-avatar round lg">
+                <image data-index="{{idx}}" bindtap="toSiLiao4" src="{{item.userInfo.avatarUrl}}"
+                  style="border-radius: 50%; height: 100%;width: 100%; overflow:hidden;">
+                </image>
+              </view>
+              <view class="content flex-sub">
+                <!-- 昵称 -->
+                <view class="text-grey">
+                  <text>
+                    {{item.userInfo.nickName}}
+                  </text>
+                </view>
+                <view class="text-gray text-sm flex justify-between">
+                  {{item.time}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="text-content">
+            {{item.content}}
+          </view>
+          <view class="padding-lr">
+            <view class="bg-img {{isCard?'':'only-img'}}">
+              <image bindtap="viewImagesQH" data-index="{{idx}}" data-src="{{item.contentImage}}"
+                src="{{item.contentImage}}" mode="widthFix"></image>
+            </view>
+          </view>
+          <view class="cu-list menu-avatar comment">
+            <view class="cu-item">
+              <view class="content">
+                <view class="text-green">
+                  联系电话：<text class="text-gray">{{item.phone}}</text>
+                  <text data-index="{{idx}}" bindtap="CopyPhoneHX" class="textCopy">呼叫</text>
+                </view>
+                <view class="text-green">
+                  微信：<text class="text-gray">{{item.weChat}}</text>
+                  <text data-index="{{idx}}" bindtap="CopyWeChatHX" class="textCopy">复制</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </swiper-item>
+  <swiper-item wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+
+    <!-- 驾校 -->
+    <block>
+      <view wx:for-index="idx" class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{carList}}" wx:key="index">
+        <view class="cu-item shadow" wx:if="{{item.shenHe}}">
+          <view wx:if="{{item.GuanFang != ''}}" class="cu-tag bg-green gonggao">{{item.GuanFang}}</view>
+          <view class="cu-list menu-avatar">
+            <view class="cu-item">
+              <!-- 头像 -->
+              <view class="cu-avatar round lg">
+                <image data-index="{{idx}}" src="{{item.userInfo.avatarUrl}}" bindtap="toSiLiao5"
+                  style="border-radius: 50%; height: 100%;width: 100%; overflow:hidden;">
+                </image>
+              </view>
+              <view class="content flex-sub">
+                <!-- 昵称 -->
+                <view class="text-grey">
+                  <text>
+                    {{item.userInfo.nickName}}
+                  </text>
+                </view>
+                <view class="text-gray text-sm flex justify-between">
+                  {{item.time}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="text-content">
+            {{item.CarJieShao}}
+          </view>
+          <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+            <view class="bg-img {{isCard?'':'only-img'}}">
+              <video src="{{item.VideoID}}" mode="widthFix" style="height: 100%;width: 100%;"></video>
+            </view>
+          </view>
+          <!-- 评论区 -->
+          <view class="cu-list menu-avatar comment solids-top">
+            <view class="cu-item">
+              <view class="content">
+                <view class="text-green" style="font-size: 40rpx; font-weight: bolder;">
+                  驾校：<text class="text-gray">{{item.CarName}}</text>
+                </view>
+                <view class="text-green justify-between">
+                  地址：<text class="text-gray">{{item.addr}}</text>
+                </view>
+                <view class="text-green justify-between">
+                  价格：<text class="text-gray">{{item.price}}</text>
+                </view>
+                <view class="text-green justify-between">
+                  是否接送(包含一个人)：<text class="text-gray">{{item.jiesong}}</text>
+                </view>
+                <view class="text-green justify-between">
+                  报名方式:<text class="text-gray"></text>
+                  <text data-index="{{idx}}" bindtap="navToMiNi3" class="textCopy">报名咨询</text>
+                </view>
+                <view class="text-green">
+                  下证时间：
+                  <text class="text-gray">{{item.TakeTime}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='goTop' hidden='{{!floorstatus}}' bindtap="goTop">
+        顶部
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+
+    <!--跳蚤市场-->
+    <block>
+      <view wx:for-index="idx" class="item" wx:for="{{TiaoZaoList}}" bindtouchstart="bindTouchStart">
+        <view class="left">
+          <image data-index="{{idx}}" class="avatar" bindtap="toSiLiao6" src="{{item.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="right">
+          <view class="nickname">{{item.userInfo.nickName}}</view>
+          <view class="content">{{item.content}}</view>
+          <view class="image-list">
+            <block wx:if="{{item.images.length != 1}}">
+              <image mode="aspectFit" bindtap="viewImagesTiaoZao" data-index="{{idx}}" data-src="{{image}}"
+                class="image" wx:for="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+            </block>
+            <block wx:else>
+              <image mode="aspectFit" bindtap="viewImagesTiaoZao" data-index="{{idx}}" data-src="{{image}}"
+                class="imagenum1" wx:for="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+            </block>
+          </view>
+          <view class="time-area">
+            <view class="time">{{item.time}}</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- <view class="comment-add" style="bottom:{{heightBottom !='' ? heightBottom : 0}}rpx;" wx:if="{{showCommentAdd}}">
+
+        <input class="comment-input" placeholder="{{reply.length>0 ? '回复 ' + reply : '评论'}}" focus="{{showCommentAdd}}" bindinput="bindInput" bindfocus="bindFocus" />
+      
+        <button class="comment-send " type="primary" disabled="{{commentContent.length>0 ? false : true}}" size="mini" catchtap="clickSend">发 送</button>
+      </view> -->
+
+
+    </block>
+  </swiper-item>
+</swiper>
+
+
+
+
+
+<view class='goTop' hidden='{{!floorstatus}}' bindtap="goTop">
+  顶部
+</view>
+<!-- 外卖通讯录tab -->
+<scroll-view wx:if="{{TabCur == 2 && changeSchool == false}}" class="tabscroll" scroll-y="true"
+  style="height: 500rpx;width: 90rpx;">
+  <view class="view-tab {{index==TabCurShangtang?'textSelected':''}}" wx:for="{{tabChongshan}}" wx:key="index"
+    bindtap="tabSelectShangtang" data-id="{{index}}">{{item}}
+  </view>
+</scroll-view>
+<scroll-view wx:if="{{TabCur == 2 && changeSchool == true}}" class="tabscroll" scroll-y="true"
+  style="height: 500rpx;width: 90rpx;">
+  <view class="view-tab {{index==TabCurPuHeShangtang?'textSelected':''}}" wx:for="{{tabPuHe}}" wx:key="index"
+    bindtap="tabSelectPuHeShangtang" data-id="{{index}}">{{item}}
+  </view>
+</scroll-view>
+<block wx:if="{{TabCur == 2}}">
+  <view wx:if="{{!changeSchool}}">
+    <image class="school" src="../../images/school.png" bindtap="changeSchool"></image>
+    <text class="schooltext">蒲河</text>
+  </view>
+  <view wx:else>
+    <image class="school" src="../../images/school.png" bindtap="changeSchool1"></image>
+    <text class="schooltext">崇山</text>
+  </view>
+</block>
+<!-- 家教通讯录tab -->
+<scroll-view wx:if="{{TabCur == 3}}" class="tabscroll" scroll-y="true" style="height: 500rpx;width: 90rpx;">
+  <view class="view-tab {{index==TabTeacher?'textSelected':''}}" wx:for="{{tabTeacher}}" wx:key="index"
+    bindtap="tabSelectTeacher" data-id="{{index}}">{{item}}
+  </view>
+</scroll-view>
+<block wx:if="{{TabCur == 3}}">
+  <view wx:if="{{!changeSchoolT}}">
+    <image class="school" src="../../images/school.png" bindtap="changeSchoolT"></image>
+    <text class="schooltext">蒲河</text>
+  </view>
+  <view wx:else>
+    <image class="school" src="../../images/school.png" bindtap="changeSchool1T"></image>
+    <text class="schooltext">崇山</text>
+  </view>
+</block>
+
+<!-- 表白墙评论框 -->
+<view class="cu-bar input inputComment" wx:if="{{showCommentAdd}}">
+  <view class="action">
+    <text class="text-grey"></text>
+  </view>
+  <input placeholder="{{reply.length>0 ? '回复 ' + reply : '评论'}}" focus="{{showCommentAdd}}" bindinput="bindInput"
+    bindfocus="bindFocus" class="solid-bottom" maxlength="300" cursor-spacing="10"></input>
+  <view class="action">
+    <text class="text-grey"></text>
+  </view>
+  <button class="cu-btn bg-green shadow-blur" disabled="{{commentContent.length>0 ? false : true}}" size="mini"
+    catchtap="clickSend">发送</button>
+</view>
+
+<button class="kf_button" open-type="contact" session-from="weapp">
+  <image class="kf_image" src="../../images/kefu.png"></image>
+</button>

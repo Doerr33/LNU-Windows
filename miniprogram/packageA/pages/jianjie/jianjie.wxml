@@ -1,0 +1,40 @@
+<swiper style="margin-top:20rpx;margin-bottom: 130rpx;" />
+<view class="item" >
+	<view class="left">
+		<image class="avatar" src="https://z3.ax1x.com/2021/05/27/2CaPIK.jpg"></image>
+	</view>
+	<view class="right">
+		<view class="nickname">辽宁大学</view>
+  </view>
+	<image bindtap = "navigatorToMap" class="location" src = "/images/location.png"></image>
+</view>
+
+<view class="item1">
+  <view class="item1-text">
+    <image class="mini-localtion" src = "/images/mini-location.png"></image>
+    <text class="text-location">崇山校区:辽宁省沈阳市皇姑区崇山中路66号</text>
+  </view>
+  <view class="item1-text">
+    <image class="mini-localtion" src = "/images/mini-location.png"></image>
+    <text  class="text-location">蒲河校区:辽宁省沈阳市沈北新区道义大街58号</text>
+  </view>
+  <view class="item1-text">
+    <image class="mini-localtion" src = "/images/mini-location.png"></image>
+    <text  class="text-location">辽阳武圣校区:辽宁省辽阳市</text>
+  </view>
+  <view class="item1-text">
+    <image class="mini-localtion" src = "/images/phone.png"></image>
+    <text  class="text-location">024-62202299</text>
+  </view>
+</view>
+<view class="item">
+  <text style="color:#1296db;">|简介</text>
+</view>
+<view class="item">
+  <text>
+    　　辽宁大学是一所具备文、史、哲、经、法、理、工、管、医、艺等学科门类的省属综合性大学。学校现有三个校区，即沈阳崇山校区、沈阳蒲河校区和辽阳武圣校区。学校占地面积2190亩，校舍建筑面积65.4万平方米，是国家“211工程”重点建设院校和世界一流学科建设高校。   
+  </text>
+</view>
+<view class="item">
+  <video initial-time = "2" class="adr" src="cloud://cloud1-7gdhiyd69c198606.636c-cloud1-7gdhiyd69c198606-1305299693/LNU/辽宁大学官方宣传片_高清 720P.mp4"></video>
+</view>

@@ -1,0 +1,40 @@
+.tianJia{
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  z-index: 999;
+  width: 100rpx;
+  height: 100rpx;
+}
+/** 
+  操作面板
+**/
+.operation-pannel {
+  width: 200rpx;
+  position: fixed;
+  top: 65px;
+  left: 10rpx;
+  background-color: #4c5154;
+}
+
+.operation-pannel .operation-pannel-item {
+  display: flex;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.operation-pannel .operation-pannel-item .operation-pannel-image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.operation-pannel .operation-pannel-item .operation-pannel-text {
+  line-height: 30rpx;
+  margin-left: 10rpx;
+}

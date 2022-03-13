@@ -1,0 +1,42 @@
+<block>
+  <navigator data-index = "{{index}}" bindlongpress = "delNews" class="cu-card case {{isCard?'no-card':''}}" url="/pages/article/article?id={{item._id}}"
+    wx:for="{{newsList}}" wx:key="index">
+    <view class="cu-item shadow">
+      <view class="image">
+        <image src="{{item.imageUrl}}" mode="widthFix"></image>
+        <view bindtap = "delNews" class="cu-tag bg-red delete">长按删除</view>
+        <view class="cu-bar bg-shadeBottom">
+          <text class="text-cut" style="font-size: 20px;">{{item.title}}</text>
+        </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <!-- 头像 -->
+          <view class="cu-avatar round lg">
+            <image src="{{item.userInfo.avatarUrl}}"
+              style="border-radius: 50%; height: 100%;width: 100%; overflow:hidden;">
+            </image>
+          </view>
+          <view class="content flex-sub">
+            <!-- 昵称 -->
+            <view class="text-grey">
+              <text>
+                {{item.userInfo.nickName}}
+              </text>
+            </view>
+            <view class="text-gray text-sm flex justify-between">
+              {{item.time}}
+              <view class="text-gray text-sm">
+                <text class="cuIcon-attentionfill margin-lr-xs"></text> {{item.browse == null ? 0 : item.browse}}
+                <text class="cuIcon-appreciatefill margin-lr-xs"></text> {{item.like.length}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <view class='goTop' hidden='{{!floorstatus}}' bindtap="goTop">
+    顶部
+  </view>
+</block>

@@ -1,0 +1,5 @@
+.showInfo{
+  color: grey;
+  font-size: 30rpx;
+  text-indent:2rem
+}

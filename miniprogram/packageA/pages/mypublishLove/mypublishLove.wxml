@@ -1,0 +1,91 @@
+<block wx:if = "{{loveList.length != 0}}">
+  <view  bindlongpress = "delLove" data-index="{{index}}" wx:for-index="index" class="item" wx:for="{{loveList}}" bindtouchstart="bindTouchStart">
+    <view class="left">
+      <!-- <view bindtap = "delNews" class="cu-tag bg-red delete">长按删除</view> -->
+      <image class="avatar" src="{{item.userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="right">
+      <view class="nickname">{{item.userInfo.nickName}}</view>
+      <view class="content">{{item.content}}</view>
+      <view class="image-list">
+        <block wx:if="{{item.images.length != 1}}">
+          <image mode="aspectFit" bindtap="viewImages" data-index="{{index}}" data-src="{{image}}" class="image"
+            wx:for="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+        </block>
+        <block wx:else>
+          <image mode="aspectFit" bindtap="viewImages" data-index="{{index}}" data-src="{{image}}" class="imagenum1"
+            wx:for="{{item.images}}" wx:for-item="image" src="{{image}}"></image>
+        </block>
+      </view>
+      <view class="time-area">
+        <view class="time">{{item.time}}</view>
+        <view>
+          <image class="operation-button" src="/images/caozuo.png" catchtap="showOperationPannel"
+            data-index="{{index}}" bindtouchstart="bindTouchStartOperation" bindtouchend="bindTouchEndOperation">
+          </image>
+          <!-- 判断当前索引和面盘索引是否一致 -->
+          <view class="operation-pannel" wx:if="{{showOperationPannelIndex == index}}"
+            bindtouchstart="bindTouchStartOperationPannel" bindtouchend="bindTouchEndOperationPannel">
+            <view class="tab" catchtap="clickLove" data-index="{{index}}">
+              <image class="image" src="/images/love-white.png"></image>
+              <text wx:if="{{item.isLove}}"> 取消</text>
+              <text wx:else> 赞</text>
+            </view>
+            <view class="tab" catchtap="clickComment" data-index="{{index}}">
+              <image class="image" src="../../images/comment-white.png"></image>
+              <text>评论</text>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class="love-comment">
+        <view class="love" wx:if="{{item.loveList.length > 0}}">
+          <image class="love-icon" src="../../images/love-blue.png"></image>
+          <!-- love和整个循环的item不冲突 -->
+          <text class="love-nickname" wx:for-items="{{item.loveList}}" wx:for-item="love">{{love.nickName}},</text>
+        </view>
+        <view class="comment" wx:if="{{item.commentList.length > 0}}">
+          <view wx:for-items="{{item.commentList}}" wx:for-item="comment" wx:for-index="commentIndex"
+            data-index="{{index}}" data-commentindex="{{commentIndex}}" catchtap="clickCommentItem">
+            <block wx:if="{{comment.reply}}">
+              <text class="comment-nickname">{{comment.nickName}}</text>
+              <text class="comment-conetnt">回复 </text>
+              <text class="comment-nickname">{{comment.reply}}:</text>
+              <text class="comment-content">{{comment.content}}</text>
+            </block>
+            <block wx:else>
+              <text class="comment-nickname">{{comment.nickName}}:</text>
+              <text class="comment-content">{{comment.content}}</text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="comment-add" style="bottom:{{heightBottom !='' ? heightBottom : 0}}rpx;" wx:if="{{showCommentAdd}}">
+
+    <input class="comment-input" placeholder="{{reply.length>0 ? '回复 ' + reply : '评论'}}" focus="{{showCommentAdd}}" bindinput="bindInput" bindfocus="bindFocus" />
+  
+    <button class="comment-send " type="primary" disabled="{{commentContent.length>0 ? false : true}}" size="mini" catchtap="clickSend">发 送</button>
+  </view> -->
+
+
+</block>
+<block wx:else>
+  <view>这里啥也没有</view>
+</block>
+<!-- 表白墙评论框 -->
+<view class="cu-bar input inputComment" wx:if="{{showCommentAdd}}">
+  <view class="action">
+    <text class="text-grey"></text>
+  </view>
+  <input placeholder="{{reply.length>0 ? '回复 ' + reply : '评论'}}" focus="{{showCommentAdd}}" bindinput="bindInput"
+    bindfocus="bindFocus" class="solid-bottom" maxlength="300" cursor-spacing="10"></input>
+  <view class="action">
+    <text class="text-grey"></text>
+  </view>
+  <button class="cu-btn bg-green shadow-blur" disabled="{{commentContent.length>0 ? false : true}}" size="mini"
+    catchtap="clickSend">发送</button>
+</view>

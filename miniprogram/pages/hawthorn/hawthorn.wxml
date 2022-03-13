@@ -1,0 +1,71 @@
+<view class="pagesView">
+  <image class="logoImage" src="../../images/logo-shanzhadao-v01.jpg">
+  </image>
+  <view class="textSe">
+    <text class="text_small" style="position: relative; left: -5rpx; top: 83rpx; color:#f1b8af;">把你的小秘密藏到岛上来吧</text>
+  </view>
+</view>
+<!-- 初始页面 -->
+<block wx:if = "{{changeK && changeW}}">
+  <view class="buttonLY">
+    <button class="buttonKX" bindtap = "changeViewK">看留言</button>
+    <button class="buttonKX" bindtap = "changeViewW">写留言</button>
+  </view>
+</block>
+
+<!-- 查看留言 -->
+<block wx:if = "{{!changeK}}">
+  <view class="inputName">
+    <view class="textName">
+      <text class="Myname">我的名字</text>
+      <input class="MynameInput" type="text" placeholder="请输入你的名字或暗号" bindinput = "getSearchName"></input>
+    </view>
+    <button class="buttonCK" bindtap="getList">查看留言</button>
+  </view>
+</block>
+
+<!-- 写留言 -->
+<block wx:if = "{{!changeW}}">
+  <view class="inputContent">
+    <view class="textName">
+      <text class="Myname">好友名字</text>
+      <input class="MynameInput" type="text" placeholder="请填写好友名字或暗号" bindinput="getName"></input>
+    </view>
+    <view class="textContent">
+      <text class="Myname">留言内容</text>
+      <textarea class="textarea" maxlength="-1" placeholder="请填写留言内容" bindinput="getContent"></textarea>
+    </view>
+
+    <button class="buttonW" bindtap = "publish">提交留言</button>
+  </view>
+</block>
+
+
+
+<!-- 留言列表 -->
+<block wx:for = "{{list}}">
+  <view class="LYlist" wx:if = "{{list}}">
+    <text class="MynameList">给你的留言</text>
+    <view class="listLY">
+      <image class="avarator" src = "../../images/huavarator.jpg"></image>
+      <text class="nName">匿名用户</text>
+      <text class="time">{{item.time}}</text>
+    </view>
+    <view class="content">{{item.content}}</view>
+  </view>
+</block>
+<block wx:if = "{{list.length == 0}}">
+  <view class="LYlist">
+    <text class="MynameList">给你的留言</text>
+    <text class="MynameListText">暂时还没有人给你留言哦~</text>
+    <text class="MynameListText">不过没关系，你可以给TA留个言呀~</text>
+  </view>
+</block>
+
+
+<view wx:if = "{{changeButton}}" class="changeButton" bindtap = "changeButtonLY">
+  <view class="changeBottoQ">
+    <text class="textButton">{{!changeButtonText ? '查看留言': '创建留言'}}</text>
+  </view>
+</view>
+

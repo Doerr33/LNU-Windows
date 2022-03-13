@@ -1,0 +1,206 @@
+{
+  "description": "项目配置文件",
+  "cloudfunctionRoot": "cloud/",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": true,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.17.0",
+  "appid": "wx3d8284139c778420",
+  "projectname": "ColorUI-template",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "跳转详情页",
+          "pathName": "pages/article/article",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "TabCur=3",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新闻活动上传",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "发布表白墙",
+          "pathName": "pages/publish-love/publish-love",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "发布外卖信息",
+          "pathName": "pages/publish-store/publish-store",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "家教上传",
+          "pathName": "pages/publish-teacher/publish-teacher",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "家教需求",
+          "pathName": "pages/publish-teacherX/publish-teacherX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "求房源",
+          "pathName": "pages/publish-houseX/publish-houseX",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "发布房源",
+          "pathName": "pages/publish-house/publish-house",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 9,
+          "name": "驾校提交",
+          "pathName": "pages/publish-car/publish-car",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "sign-in",
+          "pathName": "pages/sign-in/sign-in",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pades/detail/friend",
+          "pathName": "pades/detail/friend",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/friend",
+          "pathName": "pages/detail/friend",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/jianjie/jianjie",
+          "pathName": "pages/jianjie/jianjie",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/map/map",
+          "pathName": "pages/map/map",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addmap/addmap",
+          "pathName": "pages/addmap/addmap",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/map1/map1",
+          "pathName": "pages/map1/map1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/publish/publish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/imagelist",
+          "pathName": "pages/detail/imagelist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/article/article",
+          "pathName": "pages/article/article",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

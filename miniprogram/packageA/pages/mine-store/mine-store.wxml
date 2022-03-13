@@ -1,0 +1,13 @@
+<view bindtap = "navToMiNi" class="cu-card" wx:for = "{{storeList}}" data-id="{{index}}">
+  <view class="cu-item" >
+      <image class="squareImage" src = "{{item.userInfo.avatarUrl}}"></image>
+      <view>
+        <text class="squareImage1">店铺:{{item.store}}</text>
+      </view>
+  </view>
+</view>
+<view class="button_container">
+  <view class="button" bindtap="addLocation">
+    <text>添加小商店</text>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<swiper style="margin-top:20rpx;margin-bottom: 130rpx;" />
+<scroll-view scroll-y class="scrollPage">
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode0">
+        <text class="cuIcon-news text-red"></text>
+        <text class="text-grey">新闻活动</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode1">
+        <text class="cuIcon-likefill text-green"></text>
+        <text class="text-grey">表白墙</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode">
+        <text class="cuIcon-friendfill text-yellow"></text>
+        <text class="text-grey">外卖通讯录</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode2">
+        <text class="cuIcon-peoplefill text-blue"></text>
+        <text class="text-grey">当家教</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode3">
+        <text class="cuIcon-peoplefill text-red"></text>
+        <text class="text-grey">找家教</text>
+      </view>
+    </view>
+
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode4">
+        <text class="cuIcon-homefill text-green"></text>
+        <text class="text-grey">出租</text>
+      </view>
+    </view>
+
+    <view class="cu-item arrow">
+      <button class="cu-btn content" bindtap="showQrcode5">
+        <text class="cuIcon-homefill text-cyan"></text>
+        <text class="text-grey">求租</text>
+      </button>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" bindtap="showQrcode6">
+        <text class="cuIcon-shopfill text-purple"></text>
+        <text class="text-grey">跳蚤市场</text>
+      </button>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

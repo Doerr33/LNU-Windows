@@ -1,0 +1,42 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+	<!-- 擅长科目 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">选择分类：</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}" name="classify">
+			<view class="picker">
+				{{index?picker[index]:'炸鸡汉堡'}}
+			</view>
+		</picker>
+	</view>
+	<!-- 选择校区 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">选择校区：</view>
+		<picker bindchange="PickerChange1" value="{{index1}}" range="{{picker1}}" name="school">
+			<view class="picker">
+				{{index1?picker1[index1]:'崇山校区'}}
+			</view>
+		</picker>
+	</view>
+
+	<!-- 输入专业 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">店名:</view>
+		<input placeholder="例：味恋客" name="major" bindinput="textareaAInput"></input>
+	</view>
+	<!-- 输入价格 -->
+	<view class="cu-form-group">
+		<view class="title">APPID</view>
+		<input placeholder="例：小商店后台获取" name="price" bindinput="textareaBInput"></input>
+	</view>
+	<!-- 输入联系方式 -->
+	<view class="cu-form-group">
+		<view class="title text-green">入驻联系电话:xxxxxxxxx</view>
+	</view>
+	<!-- 输入联系方式 -->
+	<view class="cu-form-group">
+		<view class="title text-green">微信：Doerr_33</view>
+	</view>
+	
+	<button type="primary" formType="submit" style="margin:25rpx;" bindtap="publishNews">发布</button>
+	<button type="primary" formType="reset" style="margin:25rpx;">重置</button>
+</form>

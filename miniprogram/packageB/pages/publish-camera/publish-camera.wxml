@@ -1,0 +1,28 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+	<!-- 上传图片头0/1 -->
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			图片
+		</view>
+		<view class="action">
+			{{images.length}}/9
+		</view>
+	</view>
+	<!-- 选择图片 -->
+	<view class="cu-form-group">
+		
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{images}}" wx:key="index" bindtap="ViewImage" data-url="{{images[index]}}">
+				<image src='{{images[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{images.length<9}}">
+				<text class="cuIcon-cameraadd" name="image"></text>
+			</view>
+		</view>
+	</view>
+	<button type="primary" formType="submit" style="margin:25rpx;" bindtap = "publishNews">发布</button>
+	<button type="primary" formType="reset" style="margin:25rpx;">重置</button>
+</form>

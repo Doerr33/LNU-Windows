@@ -1,0 +1,12 @@
+.textCopy{
+  margin-left: 20rpx;
+  border: 1px solid #3CB371;
+  color: #3CB371;
+  border-radius: 10rpx;
+  display: inline;
+  justify-content: space-between;
+  line-height: 30rpx;
+  font-size: 25rpx;
+  vertical-align: center; /**垂直居中*/
+  flex-direction:row;
+}

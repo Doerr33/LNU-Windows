@@ -1,0 +1,42 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+	<!-- 上传图片头0/1 -->
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			图片中必须有一张是微信小商店二维码如下
+		</view>
+		<view class="action">
+			{{images.length}}/9
+		</view>
+	</view>
+	<!-- 选择图片 -->
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{images}}" wx:key="index" bindtap="ViewImage" data-url="{{images[index]}}">
+				<image src='{{images[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{images.length<9}}">
+				<text class="cuIcon-cameraadd" name="image"></text>
+			</view>
+		</view>
+	</view>
+
+	<!-- 输入活动内容 -->
+	<view class="cu-form-group" style="font-size: 15px;">输入想要说的话</view>
+	<view class="cu-form-group align-start">
+		
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="请输入内容"
+			name="content"></textarea>
+  </view>
+  <view wx:for-index="idx" class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow">
+      <view class="image">
+        <image bindtap = "viewImages" data-index="{{idx}}" data-src="{{image}}" wx:for-item="image" src="cloud://cloud1-7gdhiyd69c198606.636c-cloud1-7gdhiyd69c198606-1305299693/辽宁大学/QQ图片20210328122913.jpg" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+	<button type="primary" formType="submit" style="margin:25rpx;" bindtap = "publishNews">发布</button>
+	<button type="primary" formType="reset" style="margin:25rpx;">重置</button>
+</form>

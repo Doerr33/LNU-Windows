@@ -1,0 +1,61 @@
+<form>
+	<view class="cu-form-group margin-top">
+		<view class="title">选择食堂：</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}" name="classify">
+			<view class="picker">
+				{{index?picker[index]:'三食堂'}}
+			</view>
+		</picker>
+	</view>
+	<!-- 选择校区 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">选择校区：</view>
+		<picker bindchange="PickerChange1" value="{{index1}}" range="{{picker1}}" name="school">
+			<view class="picker">
+				{{index1?picker1[index1]:'崇山校区'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">输入店名：</view>
+		<input placeholder="例：河南烩面" name="store" bindinput="textareaAInput"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">输入APPID：</view>
+		<input name="weChat" bindinput="textareaBInput" placeholder="例:小商店后台获取"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">营业时间</view>
+		<input placeholder="例：早上6:30 - 下午8:00" name="dayTime" bindinput="textareaCInput"></input>
+	</view>
+	<button type="primary" formType="submit" style="margin:25rpx;" bindtap="publishNews">发布</button>
+	<button type="primary" formType="reset" style="margin:25rpx;">重置</button>
+	<!-- 输入标题 -->
+	<view class="cu-form-group margin-top">
+		<view class="title text-green">1.如何开店: <text class="text-green">微信搜索"小商店助手"</text> </view>
+	</view>
+	<view wx:for-index="idx" class="cu-card case {{isCard?'no-card':''}}">
+		<view class="cu-item shadow">
+			<view class="image">
+				<image bindtap="viewImages2" data-index="{{idx}}" data-src="{{image}}" wx:for-item="image"
+					src="cloud://cloud1-7gdhiyd69c198606.636c-cloud1-7gdhiyd69c198606-1305299693/辽宁大学/教程2.jpg" mode="widthFix">
+				</image>
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title text-green">2.如何获取APPID:
+			<text data-index="{{idx}}" bindtap="CopyWeChatX" class="textCopy">复制</text>
+		</view>
+	</view>
+	<view wx:for-index="idx" class="cu-card case {{isCard?'no-card':''}}">
+		<view class="cu-item shadow">
+			<view class="image">
+				<image bindtap="viewImages" data-index="{{idx}}" data-src="{{image}}" wx:for-item="image"
+					src="cloud://cloud1-7gdhiyd69c198606.636c-cloud1-7gdhiyd69c198606-1305299693/LNU/教程.jpg" mode="widthFix">
+				</image>
+			</view>
+		</view>
+	</view>
+	
+</form>

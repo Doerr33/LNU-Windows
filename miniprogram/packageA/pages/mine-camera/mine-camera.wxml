@@ -1,0 +1,12 @@
+<view wx:for-index="idx" wx:for ="{{cameraList}}" class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image bindtap = "viewImages" wx:for = "{{item.images}}" data-index="{{idx}}" data-src="{{image}}" wx:for-item="image" src="{{image}}" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+<view class="button_container">
+  <view class="button" bindtap="addLocation">
+    <text>添加图片</text>
+  </view>
+</view>

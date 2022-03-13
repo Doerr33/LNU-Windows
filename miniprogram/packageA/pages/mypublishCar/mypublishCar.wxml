@@ -1,0 +1,50 @@
+<!-- 出租 -->
+<block>
+  <view data-index="{{index}}" bindlongpress = "delHourse" class="cu-card dynamic {{isCard?'no-card':''}}" wx:for="{{house}}" wx:key="index">
+    <view class="cu-item shadow">
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <!-- 头像 -->
+          <view class="cu-avatar round lg">
+            <image src="{{item.userInfo.avatarUrl}}" style="border-radius: 50%; height: 100%;width: 100%; overflow:hidden;">
+            </image>
+          </view>
+          <view class="content flex-sub">
+            <!-- 昵称 -->
+            <view class="text-grey">
+              <text>
+                {{item.userInfo.nickName}}
+              </text>
+            </view>
+            <view class="text-gray text-sm flex justify-between">
+              {{item.time}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="grid flex-sub padding-lr {{isCard?'col-3 grid-square':'col-1'}}">
+        <view class="bg-img {{isCard?'':'only-img'}}">
+          <video src="{{item.VideoID}}" mode="widthFix" style="height: 100%;width: 100%;"></video>
+        </view>
+      </view>
+      <!-- 评论区 -->
+      <view class="cu-list menu-avatar comment">
+        <view class="cu-item">
+          <view class="content">
+            <view class="text-grey">地点：{{item.addr}}</view>
+            <view class="text-gray">价格：{{item.price}}/月</view>
+            <view class="text-gray">是否为中介：{{item.zhongjie}}</view>
+            <view wx:if = "{{item.zhongjieF != ''}}" class="text-gray">中介费：{{item.zhongjieF}}</view>
+            <view class="text-gray">租用规则：{{item.UseTime}}</view>
+            <view class="text-gray">联系电话：{{item.phone}}
+              <text data-index = "{{index}}" bindtap = "CopyPhoneH" class="textCopy">呼叫</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='goTop' hidden='{{!floorstatus}}' bindtap="goTop">
+    顶部
+  </view>
+</block>

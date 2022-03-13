@@ -1,0 +1,52 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+	<!-- 输入地点 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">输入机构名称：</view>
+		<input placeholder="例：详细地址" name="addr" bindinput="textareaAInput"></input>
+	</view>
+	<!-- 输入价格 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">简介：</view>
+		<input placeholder="例：XXXXXXXXXX" name="price" bindinput="textareaBInput"></input>
+	</view>
+
+	<!-- 输入中介费 -->
+	<view wx:if = "{{index == 1}}" class="cu-form-group margin-top">
+		<view class="title">报名方式:</view>
+		<input placeholder="注：不是中介填无" name="zhongjieF" bindinput="textareaCInput"></input>
+	</view>
+	<!-- 输入最低租用时间 -->
+	<view class="cu-form-group margin-top">
+		<view class="title">地点:</view>
+		<input placeholder="例：详细地址" name="UseTime" bindinput="textareaDInput"></input>
+	</view>
+	
+	<!-- 上传图片头0/1 -->
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			上传视频
+		</view>
+	</view>
+	<!-- 视频 -->
+	<view class="video_area" wx:if="{{video != ''}}">
+		<video class="video_item" src="{{video}}" controls></video>
+		<image class="video_delete" src="../../images/delete.png" mode="aspectFill" bindtap="videoDelete" />
+	</view>
+	<!-- 预览视频，视频上传图片 -->
+	<view class="cu-form-group">
+		
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="chooseVideo" wx:if="{{video == '' &&  images.length == 0}}">
+				<text class="cuIcon-cameraadd" name="image"></text>
+			</view>
+		</view>
+	</view>
+	<button type="primary" formType="submit" style="margin:25rpx;" bindtap="publishNews">提交审核</button>
+	<button type="primary" formType="reset" style="margin:25rpx;">重置</button>
+</form>

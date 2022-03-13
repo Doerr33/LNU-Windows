@@ -1,0 +1,42 @@
+.button_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 99;
+  
+}
+
+.button { 
+  z-index: 1000000;
+  position: fixed;
+  bottom: 30rpx;
+  width: 145rpx;
+  height: 145rpx;
+  margin: 10rpx;
+  background-color:cadetblue;
+  border-radius: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: bold;
+  color:white;
+}
+
+.squareImage{
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 300rpx;
+  margin-right: 325rpx;
+  background-color: gray;
+  border-radius: 50%;
+}
+.squareImage1{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 30rpx;
+  font-weight: bolder;
+  color: cadetblue;
+}

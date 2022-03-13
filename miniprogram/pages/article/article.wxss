@@ -1,0 +1,27 @@
+/* pages/article/article.wxss */
+.toptitle{
+    margin-top: 100rpx;
+}
+.content{
+    margin-top: 20rpx;
+    line-height: 1.5em;
+    letter-spacing: 2rpx;
+    text-indent: 2em;
+    text-align: justify;
+}
+.lovelike{
+    margin-top: 50rpx;
+    margin-bottom: 40rpx;
+}
+.text-icon{
+    display: inline;
+}
+.timecomment{
+    font-size: 18rpx;
+}
+.item-comment{
+    display: flex;
+}
+/* .redLove{
+    color:red;
+} */

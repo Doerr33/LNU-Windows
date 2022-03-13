@@ -1,0 +1,25 @@
+<!--垂直滚动，这里必须设置高度-->
+<scroll-view class="tabscroll" scroll-y="true" style="height: 500rpx;width: 90rpx;">
+  <view class="view-tab {{index==TabCur?'textSelected':''}}" wx:for="{{tabContent}}" wx:key="index" bindtap="tabSelect"
+    data-id="{{index}}">{{item}}</view>
+</scroll-view>
+<view wx:if = "{{!changeSchool}}">
+  <image class="school" src="../../../images/school.png" bindtap = "changeSchool"></image>
+  <text class="schooltext">蒲河</text>
+</view>
+<view wx:else>
+  <image class="school" src="../../../images/school.png" bindtap = "changeSchool1"></image>
+  <text class="schooltext">崇山</text>
+</view>
+<map name="辽宁大学" enable-poi="true" show-scale="true" scale="20" show-compass="true" enable-building="true"
+  markers="{{markerss}}" enable-3D="true" include-points="{{points}}" style="width: 100%;height:100%"
+  latitude="{{latitude}}" longitude="{{longitude}}" 
+  bindregionchange = "bindRegionChange"
+  bindmarkertap="bindMarkerTap" bindtap="bindTap"
+  bindcallouttap="bindCalloutTap">
+</map>
+<view class="button_container">
+  <view class="button" bindtap="addLocation">
+    <text>添加导览</text>
+  </view>
+</view>

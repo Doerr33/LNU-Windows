@@ -1,0 +1,36 @@
+<!--pages/chatgroup/info.wxml-->
+<view class="line"></view>
+<view class="members-list">
+	<block wx:for="{{members}}">
+		<view class="members-item" wx:if="{{item.type==1}}">
+			<image class="members-item-image" src="{{membersMap[item._openid].avatarUrl}}" mode="aspectFill"></image>
+			<view class="members-item-nickname">{{membersMap[item._openid].nickName}}</view>
+		</view>
+		<view class="members-item" wx:if="{{item.type==2}}">
+
+		</view>
+		<view class="members-item" wx:if="{{item.type==3}}" bindtap="clickMemberAdd">
+			<image class="members-item-image" src="/images/jia.png" mode="aspectFill"></image>
+			<view class="members-item-nickname">
+				<text decode="true">&nbsp;</text>
+			</view>
+		</view>
+		<view class="members-item" wx:if="{{item.type==4}}"  bindtap="clickMemberDelete">
+			<image class="members-item-image" src="/images/jian.png" mode="aspectFill"></image>
+			<view class="members-item-nickname">
+				<text decode="true">&nbsp;</text>
+			</view>
+		</view>
+	</block>
+
+</view>
+
+<view class="line" style="height:20rpx;"></view>
+<view class="weui-cell weui-cell_access" bindtap="clickGroupName">
+	<view class="weui-cell__bd">群聊名称</view>
+	<view class="weui-cell__ft weui-cell__ft_in-access">
+		{{groupInfo.name ? groupInfo.name : '未命名'}}
+	</view>
+</view>
+<view class="line" style="height:20rpx;"></view>
+<button style="width:60%;margin-top:50rpx;" type="warn" size="default" bindtap="clickQuit">删除并退出</button>

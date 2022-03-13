@@ -1,0 +1,115 @@
+{
+  "pages": [
+    "pages/entrance/entrance",
+    "pages/login/login",
+    "pages/article/article",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/publish-total/publish-total",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/contentCheck/contentCheck",
+    "pages/changeTomine/changeTomine",
+    "pages/user/userInfo",
+    "pages/message/message",
+    "pages/workBox/workBox",
+    "pages/musicL/musicL",
+    "pages/hawthorn/hawthorn"
+  ],
+  "subpackages": [
+    {
+    "root": "packageA",
+    "pages": [
+      "pages/jianjie/jianjie",
+      "pages/map/map",
+      "pages/addmap/addmap",
+      "pages/mine-camera/mine-camera",
+      "pages/mine-tree/mine-tree",
+      "pages/mine-store/mine-store",
+      "pages/mypublish/mypublish",
+      "pages/mypublishNews/mypublishNews",
+      "pages/mypublishLove/mypublishLove",
+      "pages/mypublishTea/mypublishTea",
+      "pages/mypublishTeaX/mypublishTeX",
+      "pages/mypublishCar/mypublishCar",
+      "pages/mpublisHousex/mpublisHousex",
+      "pages/mypublishTiaoZao/mypublishTiaoZao"
+    ]
+  }, {
+    "root": "packageB",
+    "name": "pack2",
+    "pages": [
+      "pages/kaoyan/kaoyan",
+      "pages/addMusic/addMusic",
+      "pages/chatgroup/editName",
+      "pages/chatgroup/info",
+      "pages/search/search",
+      "pages/qunLiao/qiaoLiao",
+      "pages/Findex-list/Findex-list",
+      "pages/publish/publish",
+      "pages/publish-love/publish-love",
+      "pages/publish-store/publish-store",
+      "pages/publish-teacher/publish-teacher",
+      "pages/publish-teacherX/publish-teacherX",
+      "pages/publish-house/publish-house",
+      "pages/publish-houseX/publish-houseX",
+      "pages/publish-car/publish-car",
+      "pages/publish-camera/publish-camera",
+      "pages/publish-tree/publish-tree",
+      "pages/publishStore/publishStore",
+      "pages/publishTiaoZao/publishTiaoZao",
+      "pages/public-gonggao/public-gonggao"
+    ]
+  }
+],
+  "tabBar": {
+    "color": "#cccccc",
+    "selectedColor": "#666",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index-y.png"
+      },
+      {
+        "pagePath": "pages/workBox/workBox",
+        "text": "辽大园",
+        "iconPath": "/images/classify.png",
+        "selectedIconPath": "/images/classify-y.png"
+      },
+      {
+        "pagePath": "pages/publish-total/publish-total",
+        "iconPath": "/images/publish.png",
+        "selectedIconPath": "/images/publish.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "/images/message.png",
+        "selectedIconPath": "/images/message-y.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/mine.png",
+        "selectedIconPath": "/images/mine-y.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "LNU视窗",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取当前位置"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-green"></text> 推荐
+  </view>
+</view>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item data-index = "{{index}}" bindtap = "toDetailTuijian1" wx:for="{{swiperList2}}" wx:key = "index" >
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-green"></text> 校园生态
+  </view>
+</view>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item data-index = "{{index}}" bindtap = "toDetailTuijian" wx:for="{{swiperList1}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text>听音
+  </view>
+</view>
+<view class="tower-swiper" >
+  <view class="tower-item" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd" wx:for="{{swiperList}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </view>
+</view>
+<view class="container">
+  <view class="control_button">
+    <view class="btns pre_next pre" bindtap="audioPre">
+      <image class="img_pre_next" src="./img/pre.png"></image>
+    </view>
+      <view wx:if = "{{!playMusic}}" class="btns play_pause" bindtap="audioPlay">
+        <image class="img_play_pause" src="./img/play.png"></image>
+      </view>
+      <view wx:else class="btns play_pause" bindtap="audioPlay1">
+        <image class="img_play_pause" src="./img/pause.png"></image>
+      </view>
+    <view class="btns pre_next next"  bindtap="audioNext">
+      <image class="img_pre_next" src="./img/next.png"></image>
+    </view>
+  </view>
+  <audio src="{{Zmusic}}" id="myAudio" ></audio>
+  <!-- <button bindtap = "clickTJMusic">添加音乐</button> -->
+</view>
+<!--index.wxml-->
+

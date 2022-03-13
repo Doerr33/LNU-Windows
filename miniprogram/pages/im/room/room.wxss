@@ -1,0 +1,9 @@
+
+.clickInfo{
+  margin-left: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70rpx;
+  height:70rpx;
+}

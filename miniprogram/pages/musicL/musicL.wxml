@@ -1,0 +1,12 @@
+<scroll-view class="scroll-box" scroll-x scroll-with-animation scroll-into-view="{{toView}}" bindtouchstart="touchStart"
+  bindtouchend="touchEnd">
+  <view wx:for="{{list}}" wx:key="{{item}}" class="card-box" id="card_{{index}}">
+    <view class="card">
+      <audio src="{{src}}" id="myAudio"></audio>
+      <button type="primary" bindtap="audioPlay">播放</button>
+      <button type="primary" bindtap="audioPause">暂停</button>
+      <button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+      <button type="primary" bindtap="audioStart">回到开头</button>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,9 @@
+<input placeholder="复制音乐链接上传" class="input" bindinput="bindinput" type="text"/>
+<view class="huanJ" bindtap="addMusic">
+  <view class="huanM" >
+      <view wx:if = "{{webview}}">
+         <web-view src = "https://music.xf1433.com/?name=%E5%98%89%E5%AE%BE&type=netease"></web-view>
+      </view>
+  </view>
+</view>
+<button class="input1" bindtap="sendToYUN">上传</button>

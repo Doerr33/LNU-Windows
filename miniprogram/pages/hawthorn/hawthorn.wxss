@@ -1,0 +1,197 @@
+/* pages/hawthorn/hawthorn.wxss */
+page{
+  background-color: rgb(248, 242, 242);
+}
+.pagesView{
+  display: flex;
+  flex-direction: row;
+  margin-left: 50rpx;
+  margin-top: 300rpx;
+}
+.logoImage{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.textSe{
+  position: relative;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+.text_small{
+  color: #f1b8af;
+  position: relative;
+  font-size: 27rpx;
+  word-break:break-all;
+  color: #7a7878;
+  font-size: 34rpx;
+}
+.buttonLY{
+  margin-top:350rpx;
+}
+.buttonKX{
+  background-color: #f0b0a7;
+  width: 500rpx;
+  height: 80rpx;
+  margin-top: 60rpx;
+  color: white;
+  line-height: 80rpx;
+  font-size: 27rpx;
+  font-weight: bold;
+}
+
+.inputName{
+  background-color: white;
+  margin: 50rpx;
+  height: 300rpx;
+  width: 650rpx;
+  text-align: center;
+  justify-content: center;
+}
+.textName{
+  margin-top: 35rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  display: flex;
+  height: 100rpx;
+  /* width: 600rpx; */
+  border-bottom: 1rpx solid#f0b0a7;
+}
+.Myname{
+  text-align: left;
+  font-size: 34rpx;
+  color: #f0b0a7;
+  line-height: 100rpx;
+}
+.MynameInput{
+  text-align: left;
+  margin-left: 40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.buttonCK{
+  background-color: #f1b8af;
+  color: white;
+  height: 100rpx;
+  margin: 20rpx 50rpx 10rpx 50rpx;
+  margin-bottom: 80rpx;
+  font-size: 34rpx;
+  line-height: 100rpx;
+  border-radius: 0%;
+}
+.LYlist{
+  background-color: white;
+  margin: 50rpx;
+  margin-top: -30rpx;
+  width: 650rpx;
+  text-align: center;
+  justify-content: center;
+  
+}
+.MynameList{
+  text-align: left;
+  font-size: 34rpx;
+  color: #f0b0a7;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f0b0a7;
+}
+.listLY{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+}
+.avarator{
+  margin-top: 16rpx;
+  margin-left: 20rpx;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background-color: #f0b0a7;
+}
+.nName{
+  font-size: 30rpx;
+  color: #7a7878;
+  margin-left: 10rpx;
+  line-height:100rpx ;
+}
+.time{
+  font-size: 30rpx;
+  color: #7a7878;
+  margin-left: 90rpx;
+  line-height:100rpx ;
+}
+.inputContent{
+  background-color: white;
+  margin: 50rpx;
+  height: 700rpx;
+  width: 650rpx;
+  text-align: center;
+  justify-content: center;
+}
+.content{
+  text-align: left;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 35rpx;
+  border-bottom: 1rpx solid #f0b0a7;
+  word-wrap: break-word;
+}
+.textContent{
+  margin-top: 35rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  display: flex;
+  height: 100rpx;
+  /* width: 600rpx; */
+}
+.textarea{
+  margin-top: 35rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  text-align: left;
+}
+
+.buttonW{
+  background-color: #f1b8af;
+  color: white;
+  height: 100rpx;
+  margin: 20rpx 50rpx 10rpx 50rpx;
+  margin-top: 300rpx;
+  margin-bottom: 80rpx;
+  font-size: 34rpx;
+  line-height: 100rpx;
+  border-radius: 0%;
+}
+
+.changeButton{
+  background-color: #f1b8af;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 100rpx;
+  right: 10rpx;
+}
+.textButton{
+  display: flex;
+  font-size: 20rpx;
+  color: white;
+  font-weight: bold;
+  line-height: 100rpx;
+  word-wrap: break-word;
+  text-align: center;
+  justify-content: center;
+  
+}
+.MynameListText{
+  display: block;
+  text-align: center;
+  font-size: 34rpx;
+  color: #f0b0a7;
+  line-height: 100rpx;
+}

@@ -1,0 +1,180 @@
+<view wx:if = "{{userInfo}}">
+    <swiper style="margin-bottom: 130rpx;" />
+<!-- 新闻活动发布 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>新闻活动发布
+    </view>
+</view>
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://636c-cloud1-7gdhiyd69c198606-1305299693.tcb.qcloud.la/LNU/publish-total/%E7%A7%91%E6%AF%94.jpg?sign=1e454266381b46f357d368ac848c5829&t=1617595060');height: 414rpx;"
+url = "/packageB/pages/publish/publish"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            篮球赛，足球赛，校园歌手大赛
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+
+<!-- 表白 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>表白墙发布
+    </view>
+</view>
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://636c-cloud1-7gdhiyd69c198606-1305299693.tcb.qcloud.la/LNU/publish-total/%E8%A1%A8%E7%99%BD%E5%A2%99.jpg?sign=dc5260123fc515bc3d03d291f681f191&t=1617595138');height: 414rpx;"
+url = "/packageB/pages/publish-love/publish-love"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            给喜欢的小哥哥，小姐姐表白吧
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+<!-- 表白 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>跳蚤市场发布
+    </view>
+</view>
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://636c-cloud1-7gdhiyd69c198606-1305299693.tcb.qcloud.la/LNU/publish-total/%E8%B7%B3%E8%9A%A4%E5%B8%82%E5%9C%BA.jpg?sign=2aa21af98d1796e5b2c619bd11b8bc5a&t=1617595152');height: 414rpx;"
+url = "/packageB/pages/publishTiaoZao/publishTiaoZao"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            售卖手头闲置物品
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+<!-- 外卖通讯录 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>食堂进驻
+    </view>
+</view>
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://636c-cloud1-7gdhiyd69c198606-1305299693.tcb.qcloud.la/LNU/publish-total/%E9%80%9A%E8%AE%AF%E5%BD%95.jpg?sign=6a45c1cd643d84290fd543c53be0d255&t=1617595173');height: 414rpx;"
+url = "/packageB/pages/publish-store/publish-store"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            一顿不吃饿得慌
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+
+<!-- 增加家教需求 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>周边入驻
+    </view>
+</view>
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://636c-cloud1-7gdhiyd69c198606-1305299693.tcb.qcloud.la/LNU/%E5%95%86%E5%AE%B6%E5%85%A5%E9%A9%BB.jpg?sign=5c496a39c2347454d0a51c151226cc33&t=1635757700');height: 414rpx;"
+url = "/packageB/pages/publish-teacher/publish-teacher"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            吃喝玩乐，永无止境
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+<!-- 增加个人家教信息 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>房屋出租
+    </view>
+</view>
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://z3.ax1x.com/2021/05/27/2Cs17d.jpg');height: 414rpx;"
+url = "/packageB/pages/publish-house/publish-house"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            发布房源信息
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+<!-- 增加房屋出租信息 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>辅导机构入驻
+    </view>
+</view>
+
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://636c-cloud1-7gdhiyd69c198606-1305299693.tcb.qcloud.la/LNU/%E8%80%83%E7%A0%94.jpg?sign=f2fd4144a74a88c802d22a90336d27d1&t=1635757795');height: 414rpx;"
+url = "/packageB/pages/publish-houseX/publish-houseX"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            不知名程序员官方合作
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+
+
+<!-- 增加租房需求信息 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>校园求助
+    </view>
+</view>
+
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://636c-cloud1-7gdhiyd69c198606-1305299693.tcb.qcloud.la/LNU/%E6%B1%82%E5%8A%A9.jpg?sign=e0e9f440790bc805a9308ce1bc6f87d2&t=1635757822');height: 414rpx;"
+url = "/packageB/pages/publish-teacherX/publish-teacherX"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            各种求助，校内互助
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+<!-- 增加驾校信息 -->
+<view class="cu-bar bg-white margin-top">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>增加驾校信息
+    </view>
+</view>
+<navigator class="bg-img bg-mask padding-tb-xl"
+style="background-image: url('https://636c-cloud1-7gdhiyd69c198606-1305299693.tcb.qcloud.la/LNU/publish-total/%E9%A9%BE%E6%A0%A1.jpg?sign=91525e39c6e1dada0bc6f7c18940e810&t=1617595290');height: 414rpx;"
+url = "/packageB/pages/publish-car/publish-car"
+>
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            发布驾校广告，如有不实永久拉黑
+        </view>
+        <view class="padding-xs">
+            Only the guilty need fear me.
+        </view>
+    </view>
+</navigator>
+</view>

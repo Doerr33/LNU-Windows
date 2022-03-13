@@ -1,0 +1,38 @@
+<view style="margin-top:40rpx;" class="cu-bar search">
+  <view class="content">
+    {{chatTitle}}
+  </view>
+  <image wx:if = "{{chatType == 2}}" slot="right" class="clickInfo" src="../../../images/qunliao-blue.png" bindtap="clickInfo"></image>
+  <!-- <view class="action">
+    <text class="cuIcon-more"></text>
+  </view> -->
+</view>
+<!-- <mp-navigation-bar 
+  
+  back="{{false}}" 
+  show="true" 
+  title="{{chatTitle}}" 
+  background="#fff">
+    <view slot="left" 
+    bindtap="back" 
+    class="weui-navigation-bar__button weui-navigation-bar__btn_goback">
+    </view>
+		
+  </mp-navigation-bar> -->
+<view class="container">
+  <chatroom
+    style="width: 100%; height: 100%"
+    envId="{{chatRoomEnvId}}"
+    collection="{{chatRoomCollection}}"
+    groupId="{{chatRoomGroupId}}"
+    userId="{{userId}}"
+    userAvatar="{{userAvatar}}"
+    userNickName="{{userNickName}}"
+    groupName="{{chatRoomGroupName}}"
+    userInfo="{{userInfo}}"
+    chatType="{{chatType}}"
+    onGetUserInfo="{{onGetUserInfo}}"
+    getOpenID="{{getOpenID}}"
+  ></chatroom>
+</view>
+
